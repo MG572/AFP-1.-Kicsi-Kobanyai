@@ -191,7 +191,39 @@ Internet
 ### Fejlesztő eszközök
    •	Visual Studio
 
+
 ## 8. Architekturális terv
+  1. A TO-DO List alkalmazás egy asztali alkalmazás, amely lehetővé teszi a felhasználók számára, hogy könnyen nyomon követhessék feladataikat. Az alkalmazás 
+  felhasználói felülete, üzleti logikája és adatkezelése külön modulokra van osztva, hogy a fejlesztés és karbantartás egyszerűbb legyen.
+
+  2. Architekturális rétegek
+  Az alkalmazás három fő rétegre oszlik:
+
+   * Felhasználói felület (UI) réteg
+       * Leírás: A felhasználói interakciókat biztosítja, ideértve a feladatok listájának megjelenítését, feladat hozzáadását, módosítását és törlését.
+       * Technológiák: Windows Forms, WPF (Windows Presentation Foundation) vagy más asztali UI keretrendszer.
+   * Üzleti logika réteg
+       * Leírás: Az alkalmazás működését vezérli, ideértve a feladatok kezelését, a módosítási és törlési folyamatokat, valamint az értesítések kezelését.
+       * Technológiák: C# programozási nyelv, MVVM (Model-View-ViewModel) minta alkalmazása az üzleti logika és a felhasználói felület szétválasztására.
+   * Adatkezelési réteg
+       * Leírás: A feladatok és a felhasználói beállítások tárolásáért felelős. Ez a réteg kezeli az adatbázis kapcsolatait, valamint az adatok lekérdezését és             frissítését.
+       * Technológiák: SQLite, JSON fájlok vagy más adatkezelési megoldások a feladatok tárolására.
+
+3. Adatmodell
+    * Feladat (Task): A feladat adatai, mint például név, leírás, határidő, státusz (pl. befejezett/nem befejezett).
+    * Felhasználói beállítások (User Settings): Az alkalmazás személyre szabásához szükséges beállítások, mint például értesítések időpontjai.
+4. Folyamatábra
+    Az alábbiakban bemutatott folyamatábra szemlélteti a feladatok kezelésének folyamatát:
+      1. A felhasználó megnyitja az alkalmazást.
+      2. A felhasználó új feladatot ad hozzá.
+      3. A rendszer menti a feladatot az adatkezelési réteg segítségével.
+      4. A felhasználó megtekinti a feladatok listáját.
+      5. A felhasználó módosítja vagy törli a feladatot, ami szintén az adatkezelési réteg frissítését vonja maga után.
+5. Technológiai stack
+  * Fejlesztői környezet: Visual Studio
+  * Programozási nyelv: C#
+  * Felhasználói felület: Windows Forms vagy WPF
+  * Adatbázis: SQLite vagy JSON fájlok
 
 ### Webszerver
 
