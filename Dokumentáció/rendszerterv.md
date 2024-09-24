@@ -171,6 +171,20 @@
 ### Vásárolt softwarekomponensek és külső rendszerek
 
 ### Hardver topológia
+Internet
+   |
+[Router]
+   |
+[Switch] (opcionális, ha több számítógép van)
+   |
+-------------------------
+  |                     |
+[PC1]                 [PC2] (több felhasználó esetén)
+  |                     |
+[Monitor]             [Monitor]
+[Billentyűzet]        [Billenytűzet]
+[Egér]                [Egér]
+
 
 ### Fizikai alrendszerek
 
