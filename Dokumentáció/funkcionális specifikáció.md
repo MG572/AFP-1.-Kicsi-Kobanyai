@@ -1,7 +1,9 @@
 # Funkcionális specifikáció
 ## 1. Jelenlegi helyzet leírása
+A projekt célja az hogy alkossunk egy egyszerű alkalmazást ahol a felhasználó feltud magának venni megoldható feladatokat egy táblázatba ezzel segítve a munkavégzést. Képesnek kell lennie ezen kívűl határidőket és emlékeztetőket kapnia hogy ne kerüljön elfelejtésre a kihívás.
 
 ## 2. Vágyálomrendszer leírása
+Az elképzelés egy alkalmazás ahol a felhasználó meg tud nézni egy táblázatot. Elösször is ez a táblázat üres lesz. Azonban a felhasználónak képesnek kell lennie felvennie a táblázatba feladatokat, majd látnia kell ezeket benne. Ezen kívűl lehetőséget szeretnék adni a feladat módosítására felvétele után, illetve kitörlésére ha nem akarjuk hogy továbbra is jelen legyen a táblázatban(például mert már sok feladat szerepel benne vagy esetleg extrém névütközés és átláthatatlanná válik). Ezen kívűl képesnek kellene lennie késznek bejelölni a feladatot hogy tudja hogy azzal már nem kell tovább foglalkozni. Határidőt is be kell tudni állítani hogy lássa a táblázatba meddik kell elvégeznie a feladatát illetve lehetőség szerint valamiféle értesítést is kellene kapnia ha a határidő közeled ezzel elérve hogy ne felejtse el. A könnyebb átláthatóság elérése érdekében törlésen kívűl lehetőséget szeretnénk adni arra is hogy szűrni és rendezni lehessen a táblázatot.
 
 ## 3. Jelenlegi üzleti folyamatok modellje
   [Felhasználó indítja az alkalmazást]
