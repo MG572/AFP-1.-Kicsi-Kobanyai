@@ -19,7 +19,7 @@
 
 ## 8. Képernyőtervek
 
-![képnév](gitlink ahol a kép van)
+[todoplan.png](https://github.com/gybence202/KobanyaiCopy/blob/36e081ea03f7849641816ee6029402681a02de4f/todoplan.png)
 
 ## 9. Forgatókönyvek
 
