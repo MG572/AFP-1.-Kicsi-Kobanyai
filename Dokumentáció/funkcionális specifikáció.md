@@ -75,91 +75,65 @@ Az elképzelés egy alkalmazás ahol a felhasználó meg tud nézni egy tábláz
 
 ## 5. Követelménylista
 
-1. Funkcionális követelmények
+### 1. Funkcionális követelmények
 
-Feladatok hozzáadása
+#### Feladatok hozzáadása
+- A felhasználó képes új feladatokat hozzáadni.
+- A feladat bevitelekor kötelező megadni a feladat nevét.
+- Opcionálisan megadható feladat leírás és határidő (határidő dátum formátumban).
+- A feladat státuszát (pl. "Aktív") automatikusan az alkalmazás állítja be hozzáadáskor.
 
-A felhasználó képes új feladatokat hozzáadni.
+#### Feladatok listázása
+- A felhasználó megtekintheti az összes feladatot egy listában.
+- A lista tartalmazza a feladat nevét, leírását, határidejét és státuszát.
+- A felhasználó képes szűrni a feladatokat státusz szerint (pl. csak az aktív vagy kész feladatokat jelenítse meg).
 
-A feladat bevitelekor kötelező megadni a feladat nevét.
+#### Feladatok szerkesztése
+- A felhasználó képes meglévő feladatokat módosítani.
+- A feladat neve, leírása, határideje és státusza szerkeszthető.
+- A szerkesztés után a feladat frissített adatai mentésre kerülnek az adatbázisban.
 
-Opcionálisan megadható feladat leírás és határidő (határidő dátum formátumban).
+#### Feladatok törlése
+- A felhasználó képes feladatokat törölni a listából.
+- Törlés esetén a feladat véglegesen eltávolításra kerül az adatbázisból.
 
-A feladat státuszát (pl. "Aktív") automatikusan az alkalmazás állítja be hozzáadáskor.
+#### Adatbázis integráció
+- Az alkalmazás a feladatokat egy helyi SQL adatbázisban (pl. SQLite) tárolja.
+- A CRUD műveletek (hozzáadás, olvasás, módosítás, törlés) valós időben hajtódnak végre az adatbázisban.
 
-Feladatok listázása
+### 2. Nem-funkcionális követelmények
 
-A felhasználó megtekintheti az összes feladatot egy listában.
+#### Felhasználói felület
+- Az alkalmazás Windows Forms alapú, egyszerű és felhasználóbarát.
+- A felhasználói felület intuitív és könnyen kezelhető legyen minden funkció számára.
+- Az alkalmazás támogassa a magyar nyelvű felhasználói felületet.
 
-A lista tartalmazza a feladat nevét, leírását, határidejét és státuszát.
+#### Teljesítmény
+- Az adatbázis-lekérdezések és -műveletek gyorsak és hatékonyak legyenek, hogy a felhasználói élmény zavartalan maradjon.
+- Az alkalmazás képes legyen kezelni akár 100-200 feladatot anélkül, hogy jelentős teljesítménycsökkenés tapasztalható lenne.
 
-A felhasználó képes szűrni a feladatokat státusz szerint (pl. csak az aktív vagy kész feladatokat jelenítse meg).
+#### Biztonság
+- Az alkalmazás biztonságosan kezelje az adatokat, a felhasználói adatok ne legyenek elérhetők illetéktelenek számára.
+- A felhasználói adatok helyi gépen kerülnek tárolásra, és nem kerülnek továbbításra külső szerverekre.
 
-Feladatok szerkesztése
+#### Hordozhatóság és telepítés
+- Az alkalmazás Windows operációs rendszeren futtatható.
+- Egyszerű telepítési folyamat, amely nem igényel bonyolult konfigurációt vagy külső függőségeket.
 
-A felhasználó képes meglévő feladatokat módosítani.
+#### Skálázhatóság
+- Az adatbázis struktúrája későbbi bővítésekhez könnyen igazítható legyen (pl. több felhasználó támogatása vagy bonyolultabb státuszkezelés).
 
-A feladat neve, leírása, határideje és státusza szerkeszthető.
+### 3. Egyéb követelmények
 
-A szerkesztés után a feladat frissített adatai mentésre kerülnek az adatbázisban.
+#### Dokumentáció
+- A rendszerhez tartozó dokumentáció tartalmazza az adatbázis struktúráját, az alkalmazás funkcióit és a telepítési lépéseket.
 
-Feladatok törlése
+#### Tesztelhetőség
+- Minden funkció alapos tesztelése szükséges (pl. feladatok hozzáadása, módosítása, törlése), hogy a rendszer hibamentesen működjön.
+- Tesztelni kell az alkalmazás teljesítményét különböző számú feladat mellett.
 
-A felhasználó képes feladatokat törölni a listából.
+Ez a követelménylista biztosítja, hogy a *todolist* alkalmazás teljes mértékben megfeleljen a felhasználói és technológiai igényeknek, miközben egyszerű, átlátható és hatékony marad.
 
-Törlés esetén a feladat véglegesen eltávolításra kerül az adatbázisból.
-
-Adatbázis integráció
-
-Az alkalmazás a feladatokat egy helyi SQL adatbázisban (pl. SQLite) tárolja.
-
-A CRUD műveletek (hozzáadás, olvasás, módosítás, törlés) valós időben hajtódnak végre az adatbázisban.
-
-2. Nem-funkcionális követelmények
-
-Felhasználói felület
-
-Az alkalmazás Windows Forms alapú, egyszerű és felhasználóbarát.
-
-A felhasználói felület intuitív és könnyen kezelhető legyen minden funkció számára.
-
-Az alkalmazás támogassa a magyar nyelvű felhasználói felületet.
-
-Teljesítmény
-
-Az adatbázis-lekérdezések és -műveletek gyorsak és hatékonyak legyenek, hogy a felhasználói élmény zavartalan maradjon.
-
-Az alkalmazás képes legyen kezelni akár 100-200 feladatot anélkül, hogy jelentős teljesítménycsökkenés tapasztalható lenne.
-
-Biztonság
-
-Az alkalmazás biztonságosan kezelje az adatokat, a felhasználói adatok ne legyenek elérhetők illetéktelenek számára.
-
-A felhasználói adatok helyi gépen kerülnek tárolásra, és nem kerülnek továbbításra külső szerverekre.
-
-Hordozhatóság és telepítés
-
-Az alkalmazás Windows operációs rendszeren futtatható.
-
-Egyszerű telepítési folyamat, amely nem igényel bonyolult konfigurációt vagy külső függőségeket.
-
-Skálázhatóság
-
-Az adatbázis struktúrája későbbi bővítésekhez könnyen igazítható legyen (pl. több felhasználó támogatása vagy bonyolultabb státuszkezelés).
-
-3. Egyéb követelmények
-
-Dokumentáció
-
-A rendszerhez tartozó dokumentáció tartalmazza az adatbázis struktúráját, az alkalmazás funkcióit és a telepítési lépéseket.
-
-Tesztelhetőség
-
-Minden funkció alapos tesztelése szükséges (pl. feladatok hozzáadása, módosítása, törlése), hogy a rendszer hibamentesen működjön.
-
-Tesztelni kell az alkalmazás teljesítményét különböző számú feladat mellett.
-
-Ez a követelménylista biztosítja, hogy a todolist alkalmazás teljes mértékben megfeleljen a felhasználói és technológiai igényeknek, miközben egyszerű, átlátható és hatékony marad.
 
 ## 6. Használati esetek
 
@@ -262,145 +236,125 @@ Határidők ellenőrzése	 | A rendszernek nyomon kell követnie a feladatok | A
 [todoplan.png](https://github.com/gybence202/KobanyaiCopy/blob/36e081ea03f7849641816ee6029402681a02de4f/todoplan.png)
 
 ## 9. Forgatókönyvek
-Forgatókönyv 1: Új feladat hozzáadása
+### Forgatókönyv 1: Új feladat hozzáadása
 
-Cél: A felhasználó új feladatot akar hozzáadni az alkalmazáshoz.
+**Cél**: A felhasználó új feladatot akar hozzáadni az alkalmazáshoz.
 
-Előfeltétel: Az alkalmazás elindítva, a fő felhasználói felület látható.
+**Előfeltétel**: Az alkalmazás elindítva, a fő felhasználói felület látható.
 
-Lépések:
+#### Lépések:
+1. A felhasználó rákattint a "Új feladat hozzáadása" gombra.
+2. Megnyílik egy ablak vagy űrlap, ahol a felhasználó megadhatja a feladat nevét, leírását, határidejét (opcionális).
+3. A felhasználó kitölti a mezőket, majd a "Mentés" gombra kattint.
 
-A felhasználó rákattint a "Új feladat hozzáadása" gombra.
+**Rendszer válasz**:
+- A rendszer validálja az adatokat (pl. nem üres név).
+- A rendszer létrehozza az új feladatot és elmenti az adatbázisba.
+- A feladat megjelenik a feladatok listájában.
 
-Megnyílik egy ablak vagy űrlap, ahol a felhasználó megadhatja a feladat nevét, leírását, határidejét (opcionális).
+**Utófeltétel**: Az új feladat sikeresen hozzáadva, és látható a listában.
 
-A felhasználó kitölti a mezőket, majd a "Mentés" gombra kattint.
+---
 
-Rendszer válasz:
+### Forgatókönyv 2: Feladat szerkesztése
 
-A rendszer validálja az adatokat (pl. nem üres név).
+**Cél**: A felhasználó módosítani szeretne egy meglévő feladatot.
 
-A rendszer létrehozza az új feladatot és elmenti az adatbázisba.
+**Előfeltétel**: A felhasználó által szerkesztendő feladat már létezik és megjelenik a listában.
 
-A feladat megjelenik a feladatok listájában.
+#### Lépések:
+1. A felhasználó kiválasztja a szerkesztendő feladatot a listából.
+2. A felhasználó rákattint a "Szerkesztés" gombra.
+3. A szerkesztési felület megnyílik, ahol a felhasználó módosítja a feladat nevét, leírását, határidejét vagy státuszát.
+4. A felhasználó a változtatásokat menti a "Mentés" gombbal.
 
-Utófeltétel: Az új feladat sikeresen hozzáadva, és látható a listában.
+**Rendszer válasz**:
+- A rendszer validálja a módosított adatokat.
+- A rendszer frissíti az adatokat az adatbázisban.
+- A frissített feladat megjelenik a listában a módosított adatokkal.
 
-Forgatókönyv 2: Feladat szerkesztése
+**Utófeltétel**: A feladat adatai frissítve lettek az adatbázisban és a felhasználói felületen.
 
-Cél: A felhasználó módosítani szeretne egy meglévő feladatot.
+---
 
-Előfeltétel: A felhasználó által szerkesztendő feladat már létezik és megjelenik a listában.
+### Forgatókönyv 3: Feladat törlése
 
-Lépések:
+**Cél**: A felhasználó törölni szeretne egy meglévő feladatot.
 
-A felhasználó kiválasztja a szerkesztendő feladatot a listából.
+**Előfeltétel**: A felhasználó által törölni kívánt feladat létezik a listában.
 
-A felhasználó rákattint a "Szerkesztés" gombra.
+#### Lépések:
+1. A felhasználó kiválasztja a törölni kívánt feladatot a listában.
+2. A felhasználó rákattint a "Törlés" gombra.
+3. A rendszer megerősítést kér egy felugró ablakban: "Biztosan törölni szeretné a feladatot?"
+4. A felhasználó megerősíti a törlést.
 
-A szerkesztési felület megnyílik, ahol a felhasználó módosítja a feladat nevét, leírását, határidejét vagy státuszát.
+**Rendszer válasz**:
+- A rendszer törli a feladatot az adatbázisból.
+- A feladat eltűnik a feladatok listájából.
 
-A felhasználó a változtatásokat menti a "Mentés" gombbal.
+**Utófeltétel**: A feladat véglegesen törlődött az adatbázisból és a felhasználói felületről.
 
-Rendszer válasz:
+---
 
-A rendszer validálja a módosított adatokat.
+### Forgatókönyv 4: Feladat státuszának módosítása
 
-A rendszer frissíti az adatokat az adatbázisban.
+**Cél**: A felhasználó módosítani szeretné egy feladat státuszát (pl. "Kész"-re állítani).
 
-A frissített feladat megjelenik a listában a módosított adatokkal.
+**Előfeltétel**: A felhasználó által szerkeszteni kívánt feladat létezik és szerepel a listában.
 
-Utófeltétel: A feladat adatai frissítve lettek az adatbázisban és a felhasználói felületen.
+#### Lépések:
+1. A felhasználó kiválasztja a feladatot, amelynek státuszát módosítani szeretné.
+2. A felhasználó a feladat részleteit megnyitva a státuszt "Aktív"-ról "Kész"-re változtatja.
+3. A változtatást a felhasználó menti.
 
-Forgatókönyv 3: Feladat törlése
+**Rendszer válasz**:
+- A rendszer frissíti a feladat státuszát az adatbázisban.
+- A feladat státusza frissítve megjelenik a listában ("Kész").
 
-Cél: A felhasználó törölni szeretne egy meglévő feladatot.
+**Utófeltétel**: A feladat státusza sikeresen módosult.
 
-Előfeltétel: A felhasználó által törölni kívánt feladat létezik a listában.
+---
 
-Lépések:
+### Forgatókönyv 5: Feladatok listázása és szűrése
 
-A felhasználó kiválasztja a törölni kívánt feladatot a listában.
+**Cél**: A felhasználó meg szeretné tekinteni a hozzáadott feladatokat, és szűrni kívánja őket státusz alapján.
 
-A felhasználó rákattint a "Törlés" gombra.
+**Előfeltétel**: A rendszerben már léteznek feladatok különböző státusszal.
 
-A rendszer megerősítést kér egy felugró ablakban: "Biztosan törölni szeretné a feladatot?"
+#### Lépések:
+1. A felhasználó megnyitja a feladatok listáját az alkalmazásban.
+2. A felhasználó kiválaszt egy szűrőt, például a "Csak aktív feladatok" opciót.
 
-A felhasználó megerősíti a törlést.
+**Rendszer válasz**:
+- A rendszer lekérdezi az adatbázisból az aktív feladatokat.
+- A rendszer csak azokat a feladatokat jeleníti meg, amelyek státusza "Aktív".
 
-Rendszer válasz:
+**Utófeltétel**: A felhasználó csak az aktív feladatokat látja a felületen.
 
-A rendszer törli a feladatot az adatbázisból.
+---
 
-A feladat eltűnik a feladatok listájából.
+### Forgatókönyv 6: Hiba kezelése üres név esetén
 
-Utófeltétel: A feladat véglegesen törlődött az adatbázisból és a felhasználói felületről.
+**Cél**: A felhasználó hibát követ el, amikor egy új feladatot ad hozzá, mert nem adja meg a feladat nevét.
 
-Forgatókönyv 4: Feladat státuszának módosítása
+**Előfeltétel**: A felhasználó egy új feladatot szeretne hozzáadni.
 
-Cél: A felhasználó módosítani szeretné egy feladat státuszát (pl. "Kész"-re állítani).
+#### Lépések:
+1. A felhasználó rákattint a "Új feladat hozzáadása" gombra.
+2. A felhasználó üresen hagyja a "Feladat neve" mezőt és rákattint a "Mentés" gombra.
 
-Előfeltétel: A felhasználó által szerkeszteni kívánt feladat létezik és szerepel a listában.
+**Rendszer válasz**:
+- A rendszer validálja a mezőket és érzékeli, hogy a "Feladat neve" mező üres.
+- A rendszer hibaüzenetet jelenít meg: "A feladat neve nem lehet üres!"
+- A felhasználó visszatér a feladat hozzáadása képernyőre.
 
-Lépések:
+**Utófeltétel**: A feladat nem került mentésre, amíg a név mező nincs kitöltve.
 
-A felhasználó kiválasztja a feladatot, amelynek státuszát módosítani szeretné.
-
-A felhasználó a feladat részleteit megnyitva a státuszt "Aktív"-ról "Kész"-re változtatja.
-
-A változtatást a felhasználó menti.
-
-Rendszer válasz:
-
-A rendszer frissíti a feladat státuszát az adatbázisban.
-
-A feladat státusza frissítve megjelenik a listában ("Kész").
-
-Utófeltétel: A feladat státusza sikeresen módosult.
-
-Forgatókönyv 5: Feladatok listázása és szűrése
-
-Cél: A felhasználó meg szeretné tekinteni a hozzáadott feladatokat, és szűrni kívánja őket státusz alapján.
-
-Előfeltétel: A rendszerben már léteznek feladatok különböző státusszal.
-
-Lépések:
-
-A felhasználó megnyitja a feladatok listáját az alkalmazásban.
-
-A felhasználó kiválaszt egy szűrőt, például a "Csak aktív feladatok" opciót.
-
-Rendszer válasz:
-
-A rendszer lekérdezi az adatbázisból az aktív feladatokat.
-
-A rendszer csak azokat a feladatokat jeleníti meg, amelyek státusza "Aktív".
-
-Utófeltétel: A felhasználó csak az aktív feladatokat látja a felületen.
-
-Forgatókönyv 6: Hiba kezelése üres név esetén
-
-Cél: A felhasználó hibát követ el, amikor egy új feladatot ad hozzá, mert nem adja meg a feladat nevét.
-
-Előfeltétel: A felhasználó egy új feladatot szeretne hozzáadni.
-
-Lépések:
-
-A felhasználó rákattint a "Új feladat hozzáadása" gombra.
-
-A felhasználó üresen hagyja a "Feladat neve" mezőt és rákattint a "Mentés" gombra.
-
-Rendszer válasz:
-
-A rendszer validálja a mezőket és érzékeli, hogy a "Feladat neve" mező üres.
-
-A rendszer hibaüzenetet jelenít meg: "A feladat neve nem lehet üres!"
-
-A felhasználó visszatér a feladat hozzáadása képernyőre.
-
-Utófeltétel: A feladat nem került mentésre, amíg a név mező nincs kitöltve.
+---
 
 Ezek a forgatókönyvek bemutatják a felhasználói interakciókat és a rendszer válaszait, amelyeken keresztül az alkalmazás funkciói megfelelően működnek, és a felhasználói élmény gördülékeny marad.
+
 
 ## 10. Funkció - követelmény megfeleltetése
 

@@ -19,6 +19,64 @@ Ez az alkalmazás alapvetően az egyéni produktivitást kívánja növelni azá
 
 ## 2. Projektterv
 
+### 1. Projekt célja
+
+A projekt célja egy **Windows Forms alapú todolist alkalmazás** fejlesztése, amely feladatok hozzáadását, listázását, szerkesztését és törlését biztosítja. Az alkalmazás egy **lokális adatbázist** használ a feladatok tárolására és kezelésére.
+
+### 2. Ütemterv (4 hét)
+
+#### Tervezés (1. hét)
+
+- **Funkciók meghatározása**: Részletes specifikáció (feladat hozzáadása, listázása, szerkesztése, törlése).
+- **Felhasználói felület megtervezése**: Windows Forms egyszerű és felhasználóbarát felület tervezése.
+- **Adatbázis tervezése**: Egyszerű adatbázis-struktúra meghatározása (pl. SQLite, SQL Server Express), amely a feladatokat tárolja (feladat ID, név, leírás, határidő, státusz).
+
+#### Fejlesztés (2-3. hét)
+
+- **Adatbázis integráció**: Az adatbázis beállítása és integrálása az alkalmazásba (kapcsolat létrehozása, CRUD műveletek).
+- **Alapfunkciók implementálása**:
+  - **Feladat hozzáadása**: Új feladatok felvitele az adatbázisba.
+  - **Feladatok listázása**: A feladatok lekérdezése és megjelenítése a felhasználói felületen.
+  - **Feladat szerkesztése**: A meglévő feladatok módosítása és frissítése az adatbázisban.
+  - **Feladat törlése**: Teljesített vagy felesleges feladatok eltávolítása az adatbázisból.
+- **Felhasználói interakciók kezelése**: Az alkalmazás reagál a felhasználói műveletekre (pl. gombnyomások, listaelem kiválasztása).
+
+#### Tesztelés és hibajavítás (4. hét)
+
+- **Funkcionális tesztelés**: Minden funkció és az adatbázis kapcsolatok alapos tesztelése.
+- **Hibajavítás**: Az észlelt hibák javítása a tesztelés során.
+- **Felhasználói visszajelzések**: Tesztkör futtatása, visszajelzések alapján finomítások elvégzése.
+- **Véglegesítés**: Stabil alkalmazás verzió készítése.
+
+### 3. Főbb funkciók
+
+- **Feladat hozzáadása**: Új feladatok rögzítése az adatbázisban.
+- **Feladatok listázása**: Az adatbázisban tárolt összes feladat megjelenítése listában.
+- **Feladat szerkesztése**: A felhasználó meglévő feladatainak módosítása.
+- **Feladat törlése**: Nem releváns feladatok eltávolítása az adatbázisból.
+
+### 4. Technológiai követelmények
+
+- **Fejlesztői környezet**: Microsoft Visual Studio
+- **Nyelv**: C#
+- **Adatbázis**: SQLite vagy SQL Server Express (lokális adatbázis)
+- **Platform**: Windows (Windows Forms)
+
+### 5. Erőforrások és szerepkörök
+
+- **Fejlesztő**: Felelős a programozásért és az adatbázis integrációjáért.
+- **Tesztelő**: A funkciók és az adatbázis működésének tesztelése.
+
+### 6. Kockázatok
+
+- **Adatbázis hibák**: Az adatbázis helytelen kezelése esetén adatvesztés vagy kapcsolati hibák fordulhatnak elő.
+- **Időhiány**: Az adatbázis integrációja és a fejlesztési folyamat időigényes lehet, ezért a 4 hetes ütemtervet szigorúan követni kell.
+
+### 7. Siker kritériumai
+
+A projekt sikeres, ha az alkalmazás stabilan működik, az adatbázis megfelelően kezeli a feladatokat, és a felhasználók könnyedén tudják kezelni a programot.
+
+
 ### 2.1 Projektszerepkörök, felelőségek:
    * Scrum masters:Sinka Barnabás
    * Junior fejlesztők: Győrfi Bence, Sálek Dániel, Szilágyi Kristóf, Márton Gergely, Bukovinszki Bálint
@@ -49,88 +107,116 @@ Ez az alkalmazás alapvetően az egyéni produktivitást kívánja növelni azá
 
 ## 3. Üzleti folyamatok modellje
 
+### 1. Felhasználói folyamatok
+Ezek a folyamatok a felhasználó interakcióira épülnek, a feladatok létrehozásától azok törléséig.
+
+#### Feladat hozzáadása
+- **Bemenet**: A felhasználó megadja a feladat nevét, leírását, határidejét.
+- **Folyamat**: Az alkalmazás ellenőrzi a bemenetek érvényességét. Ha érvényesek, a feladat bekerül az adatbázisba.
+- **Kimenet**: A feladat megjelenik a feladatlistában, és mentésre kerül az adatbázisban.
+
+#### Feladatok listázása
+- **Bemenet**: A felhasználó megnyitja az alkalmazást vagy kéri a feladatok megjelenítését.
+- **Folyamat**: Az alkalmazás lekérdezi az adatbázisból a mentett feladatokat.
+- **Kimenet**: A feladatok megjelennek a felhasználó felületén egy listában.
+
+#### Feladat szerkesztése
+- **Bemenet**: A felhasználó kiválasztja a szerkesztendő feladatot, módosítja annak adatait.
+- **Folyamat**: Az alkalmazás ellenőrzi a módosításokat, és frissíti az adatbázisban az adott feladatot.
+- **Kimenet**: A feladat frissítve jelenik meg a listában, és az adatbázisban is módosulnak az adatok.
+
+#### Feladat törlése
+- **Bemenet**: A felhasználó kiválaszt egy feladatot és törli azt.
+- **Folyamat**: Az alkalmazás eltávolítja a feladatot az adatbázisból.
+- **Kimenet**: A feladat törlődik a listából és az adatbázisból.
+
+### 2. Rendszerfolyamatok
+Ezek a folyamatok a háttérben zajlanak, és biztosítják, hogy az adatbázis megfelelően kezelje a felhasználói adatokat.
+
+#### Adatbázis lekérdezés
+- **Bemenet**: Lekérdezés (SQL) futtatása a feladatok lekérdezésére (pl. a felhasználói felületen történő listázás során).
+- **Folyamat**: Az alkalmazás SQL utasítást küld az adatbázisnak a feladatok lekérdezésére.
+- **Kimenet**: Az adatbázis visszaküldi a feladatokat, amelyeket az alkalmazás megjelenít a felhasználó számára.
+
+#### Adatbázis frissítés
+- **Bemenet**: A felhasználó adatot ad hozzá vagy szerkeszt.
+- **Folyamat**: Az alkalmazás SQL utasítást küld az adatbázisnak (INSERT, UPDATE).
+- **Kimenet**: Az adatbázis tárolja a módosított adatokat.
+
+#### Adatbázis törlés
+- **Bemenet**: A felhasználó törli a feladatot.
+- **Folyamat**: Az alkalmazás SQL DELETE utasítást küld az adatbázisnak.
+- **Kimenet**: A feladat törlődik az adatbázisból.
+
+#### 3. Folyamatok integrációja
+- **Felhasználói interakciók**: A felhasználók végzik a feladatok kezelését az alkalmazáson keresztül.
+- **Adatkezelés**: Az adatbázis kezeli a feladatok hozzáadását, módosítását, törlését, és biztosítja az adatok hosszú távú tárolását.
+
+#### 4. Szerepkörök a folyamatokban
+- **Felhasználó**: Teendőket kezel (hozzáad, szerkeszt, töröl, listáz).
+- **Rendszer**: Közvetít a felhasználói interakciók és az adatbázis között, végrehajtja a műveleteket (CRUD műveletek).
+
+Ez az üzleti folyamatmodell segít megérteni a *todolist* alkalmazás működését, és biztosítja a rendszer megfelelő megvalósítását.
+
+
 ### 3.1 Üzleti szereplők
 - Vállalat: Kőbányai (Projekt neve)
 - Egyéni vásárlók: Akik megveszik vagy használják a programot.
 
 ### 3.2 Üzleti folyamatok
-1. Felhasználói folyamatok
+#### 1. Felhasználói folyamatok
 
 Ezek a folyamatok a felhasználó interakcióira épülnek, a feladatok létrehozásától azok törléséig.
 
-Feladat hozzáadása
+##### Feladat hozzáadása
+- **Bemenet**: A felhasználó megadja a feladat nevét, leírását, határidejét.
+- **Folyamat**: Az alkalmazás ellenőrzi a bemenetek érvényességét. Ha érvényesek, a feladat bekerül az adatbázisba.
+- **Kimenet**: A feladat megjelenik a feladatlistában, és mentésre kerül az adatbázisban.
 
-Bemenet: A felhasználó megadja a feladat nevét, leírását, határidejét.
+##### Feladatok listázása
+- **Bemenet**: A felhasználó megnyitja az alkalmazást vagy kéri a feladatok megjelenítését.
+- **Folyamat**: Az alkalmazás lekérdezi az adatbázisból a mentett feladatokat.
+- **Kimenet**: A feladatok megjelennek a felhasználó felületén egy listában.
 
-Folyamat: Az alkalmazás ellenőrzi a bemenetek érvényességét. Ha érvényesek, a feladat bekerül az adatbázisba.
+##### Feladat szerkesztése
+- **Bemenet**: A felhasználó kiválasztja a szerkesztendő feladatot, módosítja annak adatait.
+- **Folyamat**: Az alkalmazás ellenőrzi a módosításokat, és frissíti az adatbázisban az adott feladatot.
+- **Kimenet**: A feladat frissítve jelenik meg a listában, és az adatbázisban is módosulnak az adatok.
 
-Kimenet: A feladat megjelenik a feladatlistában, és mentésre kerül az adatbázisban.
+##### Feladat törlése
+- **Bemenet**: A felhasználó kiválaszt egy feladatot és törli azt.
+- **Folyamat**: Az alkalmazás eltávolítja a feladatot az adatbázisból.
+- **Kimenet**: A feladat törlődik a listából és az adatbázisból.
 
-Feladatok listázása
-
-Bemenet: A felhasználó megnyitja az alkalmazást vagy kéri a feladatok megjelenítését.
-
-Folyamat: Az alkalmazás lekérdezi az adatbázisból a mentett feladatokat.
-
-Kimenet: A feladatok megjelennek a felhasználó felületén egy listában.
-
-Feladat szerkesztése
-
-Bemenet: A felhasználó kiválasztja a szerkesztendő feladatot, módosítja annak adatait.
-
-Folyamat: Az alkalmazás ellenőrzi a módosításokat, és frissíti az adatbázisban az adott feladatot.
-
-Kimenet: A feladat frissítve jelenik meg a listában, és az adatbázisban is módosulnak az adatok.
-
-Feladat törlése
-
-Bemenet: A felhasználó kiválaszt egy feladatot és törli azt.
-
-Folyamat: Az alkalmazás eltávolítja a feladatot az adatbázisból.
-
-Kimenet: A feladat törlődik a listából és az adatbázisból.
-
-2. Rendszerfolyamatok
+#### 2. Rendszerfolyamatok
 
 Ezek a folyamatok a háttérben zajlanak, és biztosítják, hogy az adatbázis megfelelően kezelje a felhasználói adatokat.
 
-Adatbázis lekérdezés
+##### Adatbázis lekérdezés
+- **Bemenet**: Lekérdezés (SQL) futtatása a feladatok lekérdezésére (pl. a felhasználói felületen történő listázás során).
+- **Folyamat**: Az alkalmazás SQL utasítást küld az adatbázisnak a feladatok lekérdezésére.
+- **Kimenet**: Az adatbázis visszaküldi a feladatokat, amelyeket az alkalmazás megjelenít a felhasználó számára.
 
-Bemenet: Lekérdezés (SQL) futtatása a feladatok lekérdezésére (pl. a felhasználói felületen történő listázás során).
+##### Adatbázis frissítés
+- **Bemenet**: A felhasználó adatot ad hozzá vagy szerkeszt.
+- **Folyamat**: Az alkalmazás SQL utasítást küld az adatbázisnak (INSERT, UPDATE).
+- **Kimenet**: Az adatbázis tárolja a módosított adatokat.
 
-Folyamat: Az alkalmazás SQL utasítást küld az adatbázisnak a feladatok lekérdezésére.
+##### Adatbázis törlés
+- **Bemenet**: A felhasználó törli a feladatot.
+- **Folyamat**: Az alkalmazás SQL DELETE utasítást küld az adatbázisnak.
+- **Kimenet**: A feladat törlődik az adatbázisból.
 
-Kimenet: Az adatbázis visszaküldi a feladatokat, amelyeket az alkalmazás megjelenít a felhasználó számára.
+#### 3. Folyamatok integrációja
+- **Felhasználói interakciók**: A felhasználók végzik a feladatok kezelését az alkalmazáson keresztül.
+- **Adatkezelés**: Az adatbázis kezeli a feladatok hozzáadását, módosítását, törlését, és biztosítja az adatok hosszú távú tárolását.
 
-Adatbázis frissítés
+#### 4. Szerepkörök a folyamatokban
+- **Felhasználó**: Teendőket kezel (hozzáad, szerkeszt, töröl, listáz).
+- **Rendszer**: Közvetít a felhasználói interakciók és az adatbázis között, végrehajtja a műveleteket (CRUD műveletek).
 
-Bemenet: A felhasználó adatot ad hozzá vagy szerkeszt.
+Ez az üzleti folyamatmodell segít megérteni a *todolist* alkalmazás működését, és biztosítja a rendszer megfelelő megvalósítását.
 
-Folyamat: Az alkalmazás SQL utasítást küld az adatbázisnak (INSERT, UPDATE).
-
-Kimenet: Az adatbázis tárolja a módosított adatokat.
-
-Adatbázis törlés
-
-Bemenet: A felhasználó törli a feladatot.
-
-Folyamat: Az alkalmazás SQL DELETE utasítást küld az adatbázisnak.
-
-Kimenet: A feladat törlődik az adatbázisból.
-
-3. Folyamatok integrációja
-
-Felhasználói interakciók: A felhasználók végzik a feladatok kezelését az alkalmazáson keresztül.
-
-Adatkezelés: Az adatbázis kezeli a feladatok hozzáadását, módosítását, törlését, és biztosítja az adatok hosszú távú tárolását.
-
-4. Szerepkörök a folyamatokban
-
-Felhasználó: Teendőket kezel (hozzáad, szerkeszt, töröl, listáz).
-
-Rendszer: Közvetít a felhasználói interakciók és az adatbázis között, végrehajtja a műveleteket (CRUD műveletek).
-
-Ez az üzleti folyamatmodell segít megérteni a todolist alkalmazás működését, és biztosítja a rendszer megfelelő megvalósítását.
 
 ## 4. Követelmények
 
@@ -328,40 +414,32 @@ Internet
 ### Webszerver
 
 ### Adatbázis rendszer
-1. Adatbázis szerkezete
+#### 1. Adatbázis szerkezete
 
 Az adatbázis egyetlen fő táblából áll, amely a feladatokat tárolja. Ez lehet SQL alapú adatbázis, például SQLite vagy SQL Server Express, attól függően, hogy milyen típusú környezetet használunk.
 
-Táblák:
+##### Táblák:
 
-Feladatok (Tasks) tábla
+- **Feladatok (Tasks) tábla**
 
+##### Oszlopok leírása:
 
-Oszlopok leírása:
+- **TaskID**: Egyedi azonosító minden feladathoz, elsődleges kulcs (Primary Key), automatikusan növekvő érték.
+- **TaskName**: A feladat neve, maximum 255 karakter hosszúságú.
+- **TaskDescription**: Opcionális, hosszabb leírás a feladatról (pl. teendők részletei).
+- **DueDate**: Az a dátum, ameddig a feladatot el kell végezni.
+- **Status**: A feladat státusza, amely megmutatja, hogy a feladat folyamatban van-e, kész, vagy valamilyen más állapotban van (pl. késlekedés).
+- **CreatedDate**: A feladat létrehozásának dátuma, automatikusan a feladat rögzítésekor kerül kitöltésre.
+- **UpdatedDate**: Az utolsó módosítás dátuma, amikor a feladatot szerkesztik.
 
-TaskID: Egyedi azonosító minden feladathoz, elsődleges kulcs (Primary Key), automatikusan növekvő érték.
-
-TaskName: A feladat neve, maximum 255 karakter hosszúságú.
-
-TaskDescription: Opcionális, hosszabb leírás a feladatról (pl. teendők részletei).
-
-DueDate: Az a dátum, ameddig a feladatot el kell végezni.
-
-Status: A feladat státusza, amely megmutatja, hogy a feladat folyamatban van-e, kész, vagy valamilyen más állapotban van (pl. késlekedés).
-
-CreatedDate: A feladat létrehozásának dátuma, automatikusan a feladat rögzítésekor kerül kitöltésre.
-
-UpdatedDate: Az utolsó módosítás dátuma, amikor a feladatot szerkesztik.
-
-2. Kapcsolatok
+#### 2. Kapcsolatok
 
 A jelenlegi verzióban az adatbázis egyetlen táblából áll (feladatok), így nincs szükség bonyolult kapcsolatkezelésre. Az egyszerű struktúra előnye, hogy gyorsan lekérdezhető és módosítható, mivel minden feladat adatait egyetlen tábla tartalmazza.
 
-3. További lehetőségek
+#### 3. További lehetőségek
 
-Indexelés: Az adatbázis teljesítményének javítása érdekében indexek létrehozhatók a gyakran használt oszlopokon, például a TaskID, DueDate, vagy Status oszlopokon.
-
-Státusz típusok: A Status mezőhöz előre definiált értékek létrehozása (pl. "Aktív", "Kész", "Függőben") segíthet az egységesség fenntartásában.
+- **Indexelés**: Az adatbázis teljesítményének javítása érdekében indexek létrehozhatók a gyakran használt oszlopokon, például a TaskID, DueDate, vagy Status oszlopokon.
+- **Státusz típusok**: A Status mezőhöz előre definiált értékek létrehozása (pl. "Aktív", "Kész", "Függőben") segíthet az egységesség fenntartásában.
 
 Ez az adatbázis terv biztosítja a todolist alkalmazás adatainak könnyű kezelését és bővítését, miközben rugalmas marad a különböző felhasználói igényekhez.
 
@@ -369,6 +447,38 @@ Ez az adatbázis terv biztosítja a todolist alkalmazás adatainak könnyű keze
 - A programot a Visual Studio-ban lehet lehet elérni ToDoList.snl néven és azon belül a start gomb-ra kell rákattintani vagy az f5 billentyű lenyomásával lehet elindítani.
 
 ## 9. Adatbázis terv
+
+### 1. Adatbázis szerkezete
+
+Az adatbázis egyetlen fő táblából áll, amely a feladatokat tárolja. Ez lehet SQL alapú adatbázis, például SQLite vagy SQL Server Express, attól függően, hogy milyen típusú környezetet használunk.
+
+#### Táblák:
+
+- **Feladatok (Tasks) tábla**
+
+A táblában minden egyes feladat rögzítésre kerül a szükséges attribútumokkal. Ez a tábla a CRUD műveletek (hozzáadás, olvasás, szerkesztés, törlés) alapja lesz.
+
+#### Oszlopok leírása:
+
+- **TaskID**: Egyedi azonosító minden feladathoz, elsődleges kulcs (Primary Key), automatikusan növekvő érték.
+- **TaskName**: A feladat neve, maximum 255 karakter hosszúságú.
+- **TaskDescription**: Opcionális, hosszabb leírás a feladatról (pl. teendők részletei).
+- **DueDate**: Az a dátum, ameddig a feladatot el kell végezni.
+- **Status**: A feladat státusza, amely megmutatja, hogy a feladat folyamatban van-e, kész, vagy valamilyen más állapotban van (pl. késlekedés).
+- **CreatedDate**: A feladat létrehozásának dátuma, automatikusan a feladat rögzítésekor kerül kitöltésre.
+- **UpdatedDate**: Az utolsó módosítás dátuma, amikor a feladatot szerkesztik.
+
+#### 2. Kapcsolatok
+
+A jelenlegi verzióban az adatbázis egyetlen táblából áll (feladatok), így nincs szükség bonyolult kapcsolatkezelésre. Az egyszerű struktúra előnye, hogy gyorsan lekérdezhető és módosítható, mivel minden feladat adatait egyetlen tábla tartalmazza.
+
+#### 3. További lehetőségek
+
+- **Indexelés**: Az adatbázis teljesítményének javítása érdekében indexek létrehozhatók a gyakran használt oszlopokon, például a TaskID, DueDate, vagy Status oszlopokon.
+- **Státusz típusok**: A Status mezőhöz előre definiált értékek létrehozása (pl. "Aktív", "Kész", "Függőben") segíthet az egységesség fenntartásában.
+
+Ez az adatbázis terv biztosítja a todolist alkalmazás adatainak könnyű kezelését és bővítését, miközben rugalmas marad a különböző felhasználói igényekhez.
+
 
 ## 10. Implementációs terv
       1. Bevezetés
