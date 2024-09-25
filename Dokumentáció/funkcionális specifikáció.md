@@ -117,3 +117,12 @@ Határidők ellenőrzése	 | A rendszernek nyomon kell követnie a feladatok | A
 | K4 | ... | ... |
 
 ## 11 Fogalomszótár
+
+- Feladat: Azt a feladatot kell ide beírni, amit el szeretnénk végezni.
+- Prioritás: Az adott feladat prioritási szintje, hogy melyik milyen hamar kéne megcsinálni. Három szintje van: Alacsony, Közepes és Magas.
+- Határidő: A feladatnak meg lehet jelölni egy határidőt, ami egy naptár formájában lehet kijelölni Év. hónap nap. formátumban például: 2024. szeptember 25.
+- Kész van-e: A Kész van-e egy gomb amit ha bejelölünk, akkor a hozzáadott feladat végén külön odaírja hogy kész van-e.
+- Hozzáad: A Hozzáad gomb hozzáadja a listánkhoz a feladatot amit felvettünk, ha nem írtunk be semmit, akkor kapunk egy jelzést, hogy meg kell adni a feladatot.
+- Szerkesztés: A Szerkesztésnél ki kell jelölni a feladatot amit csináltunk és minden a felső sorban felsorolt tevékenységet lehet szerkeszteni. Hibaüzenetet kapunk, ha nem jelöltünk ki semmilyen feladatot sem.
+- Törlés: A Törlés a kijelölt feladatot kitörli teljesen.
+- Fájlba írás: A Fájlba írás gomb, ha van feladatunk kiírja az adott feladatot, a teendok.txt fájlba és ezt egy kis felugró ablak jelzi a felhasználónak.
