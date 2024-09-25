@@ -1,12 +1,28 @@
 # Rendszerterv
 ## 1. A rendszer célja
 
+A todolist alkalmazás célja az, hogy felhasználók egyszerűen nyomon követhessék és kezeljék a teendőiket, feladataikat. Az alkalmazás Windows Forms felületen fog működni, ami grafikus interfészt biztosít, hogy a felhasználók könnyedén hozzáadhassanak, szerkeszthessenek és törölhessenek feladatokat.
+
+Összefoglalva a rendszer fő céljai:
+
+Feladatok hozzáadása: A felhasználók új feladatokat adhatnak hozzá, megadva a szükséges adatokat (feladat neve, leírása, határidő, stb.).
+
+Feladatok listázása: A felhasználók egy átlátható listában láthatják az összes feladatukat, időrendi sorrendben vagy prioritás alapján.
+
+Feladatok módosítása: Lehetőség lesz a meglévő feladatok szerkesztésére.
+
+Feladatok törlése: A felhasználók egyszerűen törölhetnek feladatokat, ha már nem relevánsak vagy teljesítve lettek.
+
+Könnyű használat: A Windows Forms alapú felület felhasználóbarát módon biztosítja a fenti funkciókat, ikonos, gombos vagy lista alapú megoldásokkal.
+
+Ez az alkalmazás alapvetően az egyéni produktivitást kívánja növelni azáltal, hogy segít a felhasználóknak a teendőik rendszerezésében és hatékony kezelésében.
+
 ## 2. Projektterv
 
 ### 2.1 Projektszerepkörök, felelőségek:
-   * Scrum masters:
-   * Product owner: 
-   * Üzleti szereplő:
+   * Scrum masters:Sinka Barnabás
+   * Junior fejlesztők: Győrfi Bence, Sálek Dániel, Szilágyi Kristóf, Márton Gergely, Bukovinszki Bálint
+   * Üzleti szereplő: Penyaskó Dávid
      
 ### 2.2 Projektmunkások és felelőségek:
    * Frontend:
@@ -36,6 +52,83 @@
 ### 3.1 Üzleti szereplők
 
 ### 3.2 Üzleti folyamatok
+1. Felhasználói folyamatok
+
+Ezek a folyamatok a felhasználó interakcióira épülnek, a feladatok létrehozásától azok törléséig.
+
+Feladat hozzáadása
+
+Bemenet: A felhasználó megadja a feladat nevét, leírását, határidejét.
+
+Folyamat: Az alkalmazás ellenőrzi a bemenetek érvényességét. Ha érvényesek, a feladat bekerül az adatbázisba.
+
+Kimenet: A feladat megjelenik a feladatlistában, és mentésre kerül az adatbázisban.
+
+Feladatok listázása
+
+Bemenet: A felhasználó megnyitja az alkalmazást vagy kéri a feladatok megjelenítését.
+
+Folyamat: Az alkalmazás lekérdezi az adatbázisból a mentett feladatokat.
+
+Kimenet: A feladatok megjelennek a felhasználó felületén egy listában.
+
+Feladat szerkesztése
+
+Bemenet: A felhasználó kiválasztja a szerkesztendő feladatot, módosítja annak adatait.
+
+Folyamat: Az alkalmazás ellenőrzi a módosításokat, és frissíti az adatbázisban az adott feladatot.
+
+Kimenet: A feladat frissítve jelenik meg a listában, és az adatbázisban is módosulnak az adatok.
+
+Feladat törlése
+
+Bemenet: A felhasználó kiválaszt egy feladatot és törli azt.
+
+Folyamat: Az alkalmazás eltávolítja a feladatot az adatbázisból.
+
+Kimenet: A feladat törlődik a listából és az adatbázisból.
+
+2. Rendszerfolyamatok
+
+Ezek a folyamatok a háttérben zajlanak, és biztosítják, hogy az adatbázis megfelelően kezelje a felhasználói adatokat.
+
+Adatbázis lekérdezés
+
+Bemenet: Lekérdezés (SQL) futtatása a feladatok lekérdezésére (pl. a felhasználói felületen történő listázás során).
+
+Folyamat: Az alkalmazás SQL utasítást küld az adatbázisnak a feladatok lekérdezésére.
+
+Kimenet: Az adatbázis visszaküldi a feladatokat, amelyeket az alkalmazás megjelenít a felhasználó számára.
+
+Adatbázis frissítés
+
+Bemenet: A felhasználó adatot ad hozzá vagy szerkeszt.
+
+Folyamat: Az alkalmazás SQL utasítást küld az adatbázisnak (INSERT, UPDATE).
+
+Kimenet: Az adatbázis tárolja a módosított adatokat.
+
+Adatbázis törlés
+
+Bemenet: A felhasználó törli a feladatot.
+
+Folyamat: Az alkalmazás SQL DELETE utasítást küld az adatbázisnak.
+
+Kimenet: A feladat törlődik az adatbázisból.
+
+3. Folyamatok integrációja
+
+Felhasználói interakciók: A felhasználók végzik a feladatok kezelését az alkalmazáson keresztül.
+
+Adatkezelés: Az adatbázis kezeli a feladatok hozzáadását, módosítását, törlését, és biztosítja az adatok hosszú távú tárolását.
+
+4. Szerepkörök a folyamatokban
+
+Felhasználó: Teendőket kezel (hozzáad, szerkeszt, töröl, listáz).
+
+Rendszer: Közvetít a felhasználói interakciók és az adatbázis között, végrehajtja a műveleteket (CRUD műveletek).
+
+Ez az üzleti folyamatmodell segít megérteni a todolist alkalmazás működését, és biztosítja a rendszer megfelelő megvalósítását.
 
 ## 4. Követelmények
 
@@ -228,6 +321,42 @@ Internet
 ### Webszerver
 
 ### Adatbázis rendszer
+1. Adatbázis szerkezete
+
+Az adatbázis egyetlen fő táblából áll, amely a feladatokat tárolja. Ez lehet SQL alapú adatbázis, például SQLite vagy SQL Server Express, attól függően, hogy milyen típusú környezetet használunk.
+
+Táblák:
+
+Feladatok (Tasks) tábla
+
+
+Oszlopok leírása:
+
+TaskID: Egyedi azonosító minden feladathoz, elsődleges kulcs (Primary Key), automatikusan növekvő érték.
+
+TaskName: A feladat neve, maximum 255 karakter hosszúságú.
+
+TaskDescription: Opcionális, hosszabb leírás a feladatról (pl. teendők részletei).
+
+DueDate: Az a dátum, ameddig a feladatot el kell végezni.
+
+Status: A feladat státusza, amely megmutatja, hogy a feladat folyamatban van-e, kész, vagy valamilyen más állapotban van (pl. késlekedés).
+
+CreatedDate: A feladat létrehozásának dátuma, automatikusan a feladat rögzítésekor kerül kitöltésre.
+
+UpdatedDate: Az utolsó módosítás dátuma, amikor a feladatot szerkesztik.
+
+2. Kapcsolatok
+
+A jelenlegi verzióban az adatbázis egyetlen táblából áll (feladatok), így nincs szükség bonyolult kapcsolatkezelésre. Az egyszerű struktúra előnye, hogy gyorsan lekérdezhető és módosítható, mivel minden feladat adatait egyetlen tábla tartalmazza.
+
+3. További lehetőségek
+
+Indexelés: Az adatbázis teljesítményének javítása érdekében indexek létrehozhatók a gyakran használt oszlopokon, például a TaskID, DueDate, vagy Status oszlopokon.
+
+Státusz típusok: A Status mezőhöz előre definiált értékek létrehozása (pl. "Aktív", "Kész", "Függőben") segíthet az egységesség fenntartásában.
+
+Ez az adatbázis terv biztosítja a todolist alkalmazás adatainak könnyű kezelését és bővítését, miközben rugalmas marad a különböző felhasználói igényekhez.
 
 ### A program elérése, kezelése
 
