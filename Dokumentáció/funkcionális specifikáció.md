@@ -163,6 +163,77 @@ Ez a követelménylista biztosítja, hogy a todolist alkalmazás teljes mérték
 
 ## 6. Használati esetek
 
+1. Feladat hozzáadása
+Cél: Új feladat létrehozása.
+
+Használati lépések:
+
+A felhasználó megnyitja az alkalmazást.
+
+A felhasználó a "Új feladat" gombra kattint.
+
+Kitölti a feladat nevét, leírását és határidejét.
+
+A felhasználó a "Hozzáadás" gombra kattint.
+
+A rendszer menti a feladatot és megjeleníti a listában.
+
+2. Feladat módosítása
+Cél: Meglévő feladat adatainak szerkesztése.
+
+Előfeltételek: Léteznie kell a módosítandó feladatnak.
+
+Használati lépések:
+
+A felhasználó kiválasztja a módosítani kívánt feladatot a listából.
+
+A felhasználó a "Módosítás" gombra kattint.
+
+Megváltoztatja a szükséges mezőket.
+
+A felhasználó a "Mentés" gombra kattint.
+
+A rendszer frissíti a feladat adatait a listában.
+
+3. Feladat törlése
+Cél: Meglévő feladat eltávolítása.
+
+Előfeltételek: Léteznie kell a törlendő feladatnak.
+
+Használati lépések:
+
+A felhasználó kiválasztja a törölni kívánt feladatot.
+
+A felhasználó a "Törlés" gombra kattint.
+
+A rendszer megerősítést kér a törlésről.
+
+A felhasználó megerősíti a törlést.
+
+A rendszer eltávolítja a feladatot a listából.
+
+4. Feladatok megjelenítése
+Cél: A felhasználó összes feladatának megjelenítése.
+
+Használati lépések:
+
+A felhasználó megnyitja az alkalmazást.
+
+A rendszer megjeleníti az összes feladatot, a státuszukkal és határidejükkel együtt.
+
+A felhasználó szűrheti és rendezheti a feladatokat.
+
+5. Értesítések kezelése
+Cél: Határidők értesítéseinek beállítása.
+
+Használati lépések:
+
+A felhasználó megnyitja az értesítések beállításait.
+
+A felhasználó beállítja az értesítési időpontokat.
+
+A rendszer elmenti a beállításokat és értesíti a felhasználót a közelgő határidőkről.
+
 ## 7. Megfeleltetés, hogyan fedik le a használati eseteket a követelményeket
 
 Funkció                                Követelmény                                      Megfeleltetés
