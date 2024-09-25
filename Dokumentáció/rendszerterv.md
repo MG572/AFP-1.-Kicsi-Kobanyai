@@ -50,6 +50,8 @@ Ez az alkalmazás alapvetően az egyéni produktivitást kívánja növelni azá
 ## 3. Üzleti folyamatok modellje
 
 ### 3.1 Üzleti szereplők
+- Vállalat: Kőbányai (Projekt neve)
+- Egyéni vásárlók: Akik megveszik vagy használják a programot.
 
 ### 3.2 Üzleti folyamatok
 1. Felhasználói folyamatok
