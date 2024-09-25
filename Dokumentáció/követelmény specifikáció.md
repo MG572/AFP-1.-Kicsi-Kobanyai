@@ -2,13 +2,33 @@
 
 ## 1. Áttekintés
 
+  A projekt célja egy Windows Forms alapú To-Do list alkalmazás kifejlesztése, amely lehetővé teszi a felhasználók számára, hogy egyszerűen kezelhessék teendőiket. Az alkalmazás lehetőséget biztosít feladatok létrehozására, szerkesztésére, törlésére és állapotuk követésére. A program célja a hatékony időmenedzsment támogatása, és a teendők áttekinthetőségének növelése.
+
 ## 2. A jelenlegi helyzet leírása
+
+  Jelenleg a felhasználók többnyire papíron vagy más nem strukturált digitális formában kezelik teendőiket, mint például szövegszerkesztő programok vagy egyszerű jegyzetek használatával. Ez a módszer nem biztosít értesítéseket vagy állapotkezelést. A feladatok állapotának követése és strukturálása nehézkes, különösen, ha több feladatot kell egyszerre kezelni.
 
 ## 3. Vágyálomrendszer
 
+  Az alkalmazásnak az alábbi fő funkciókkal kell rendelkeznie:
+
+    Feladatok hozzáadása, szerkesztése és törlése.
+
+    Feladatok állapotának beállítása (pl. „Folyamatban”, „Kész”).
+
+    Határidők kezelése, értesítések beállítása a közelgő határidők figyelmeztetésére.
+
+    Feladatok kategorizálása különböző témák szerint.
+
+    Adatmentés és betöltés lehetősége helyi fájlokba.
+
 ## 4. Jelenlegi üzleti folyamatok modellje
 
+  A jelenlegi folyamatok szerint a felhasználók manuálisan követik nyomon feladataikat különböző eszközökkel, ami nagyban függ az egyén szervezési készségeitől. A feladatok nem mindig átláthatók, és nem áll rendelkezésre megfelelő módszer a prioritások gyors beállítására vagy a határidők nyomon követésére.
+
 ## 5. Igényelt üzleti folyamatok modellje
+
+  A célunk egy olyan alkalmazás készítése amely lehetőséget biztosít az összes teendő vizualizálására, a prioritások meghatározására és a határidők kezelésére.
 
 ## 6. Követelménylista
 1. Funkcionális követelmények
