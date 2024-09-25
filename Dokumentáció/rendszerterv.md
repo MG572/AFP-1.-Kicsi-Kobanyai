@@ -359,6 +359,7 @@ Státusz típusok: A Status mezőhöz előre definiált értékek létrehozása 
 Ez az adatbázis terv biztosítja a todolist alkalmazás adatainak könnyű kezelését és bővítését, miközben rugalmas marad a különböző felhasználói igényekhez.
 
 ### A program elérése, kezelése
+- A programot a Visual Studio-ban lehet lehet elérni ToDoList.snl néven és azon belül a start gomb-ra kell rákattintani vagy az f5 billentyű lenyomásával lehet elindítani.
 
 ## 9. Adatbázis terv
 
