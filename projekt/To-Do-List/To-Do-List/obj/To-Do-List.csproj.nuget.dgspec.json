@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\szila\\OneDrive\\Dokumentumok\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\To-Do-List\\To-Do-List\\To-Do-List.csproj": {}
+    "C:\\Users\\user\\Documents\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\To-Do-List\\To-Do-List\\To-Do-List.csproj": {}
   },
   "projects": {
-    "C:\\Users\\szila\\OneDrive\\Dokumentumok\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\To-Do-List\\To-Do-List\\To-Do-List.csproj": {
+    "C:\\Users\\user\\Documents\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\To-Do-List\\To-Do-List\\To-Do-List.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\szila\\OneDrive\\Dokumentumok\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\To-Do-List\\To-Do-List\\To-Do-List.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\To-Do-List\\To-Do-List\\To-Do-List.csproj",
         "projectName": "To-Do-List",
-        "projectPath": "C:\\Users\\szila\\OneDrive\\Dokumentumok\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\To-Do-List\\To-Do-List\\To-Do-List.csproj",
-        "packagesPath": "C:\\Users\\szila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\szila\\OneDrive\\Dokumentumok\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\To-Do-List\\To-Do-List\\obj\\",
+        "projectPath": "C:\\Users\\user\\Documents\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\To-Do-List\\To-Do-List\\To-Do-List.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Documents\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\To-Do-List\\To-Do-List\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\szila\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -58,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -28,12 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            textBoxTask = new TextBox();
+            buttonAdd = new Button();
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // textBoxTask
+            // 
+            textBoxTask.Location = new Point(12, 39);
+            textBoxTask.Name = "textBoxTask";
+            textBoxTask.Size = new Size(178, 23);
+            textBoxTask.TabIndex = 0;
+            // 
+            // buttonAdd
+            // 
+            buttonAdd.Location = new Point(12, 68);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(75, 23);
+            buttonAdd.TabIndex = 1;
+            buttonAdd.Text = "Hozzáad";
+            buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.Click += buttonAdd_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(61, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Feladat be";
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(buttonAdd);
+            Controls.Add(textBoxTask);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox textBoxTask;
+        private Button buttonAdd;
+        private Label label1;
     }
 }
