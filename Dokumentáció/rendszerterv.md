@@ -230,6 +230,7 @@ Internet
 ### Adatbázis rendszer
 
 ### A program elérése, kezelése
+- A programot a Visual Studio-ban lehet lehet elérni ToDoList.snl néven és azon belül a start gomb-ra kell rákattintani vagy az f5 billentyű lenyomásával lehet elindítani.
 
 ## 9. Adatbázis terv
 
