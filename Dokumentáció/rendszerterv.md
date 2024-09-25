@@ -282,6 +282,11 @@ Internet
 
 
 ### Fizikai alrendszerek
+- Tároló SSD vagy HDD: Ezek tárolják a programot. 
+- Hálozati eszköz: Nem szükséges, mivel offline a program.
+- Szerverek: Szintén nem kell, a program internet nélkül is működik. 
+- Beviteli eszközök: Billentyűzet, egér.
+
 
 ### Fejlesztő eszközök
    •	Visual Studio
