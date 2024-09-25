@@ -264,7 +264,7 @@ Ez az üzleti folyamatmodell segít megérteni a todolist alkalmazás működés
       •	Fejlesztői környezet: Visual Studio (C#), amely lehetővé teszi az alkalmazás fejlesztését és tesztelését.
 
 ### Vásárolt softwarekomponensek és külső rendszerek
-
+- Visual Studio 2022
 ### Hardver topológia
 Internet
    |
