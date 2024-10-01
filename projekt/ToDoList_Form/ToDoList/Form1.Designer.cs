@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            button1 = new Button();
             label1 = new Label();
             panel2 = new Panel();
             label2 = new Label();
@@ -43,6 +44,10 @@
             label5 = new Label();
             label6 = new Label();
             checkBox1 = new CheckBox();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -51,12 +56,26 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(64, 64, 64);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1088, 60);
             panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.Dock = DockStyle.Right;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button1.ForeColor = SystemColors.Window;
+            button1.Location = new Point(1013, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 60);
+            button1.TabIndex = 7;
+            button1.Text = "Kilépés";
+            button1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -201,11 +220,63 @@
             checkBox1.Text = "Kész";
             checkBox1.UseVisualStyleBackColor = false;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button2.ForeColor = SystemColors.Window;
+            button2.Location = new Point(651, 157);
+            button2.Name = "button2";
+            button2.Size = new Size(89, 60);
+            button2.TabIndex = 8;
+            button2.Text = "Hozzád";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Black;
+            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button3.ForeColor = SystemColors.Window;
+            button3.Location = new Point(816, 157);
+            button3.Name = "button3";
+            button3.Size = new Size(89, 60);
+            button3.TabIndex = 9;
+            button3.Text = "Szerkeszt";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Red;
+            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button4.ForeColor = SystemColors.Window;
+            button4.Location = new Point(970, 157);
+            button4.Name = "button4";
+            button4.Size = new Size(89, 60);
+            button4.TabIndex = 10;
+            button4.Text = "Töröl";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.Black;
+            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            button5.ForeColor = SystemColors.Window;
+            button5.Location = new Point(816, 464);
+            button5.Name = "button5";
+            button5.Size = new Size(89, 60);
+            button5.TabIndex = 11;
+            button5.Text = "Fájlba írás";
+            button5.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1088, 559);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
             Controls.Add(checkBox1);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -247,5 +318,10 @@
         private Label label5;
         private Label label6;
         private CheckBox checkBox1;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
     }
 }
