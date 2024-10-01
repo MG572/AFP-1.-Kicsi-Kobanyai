@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Suli\\3.f\u00E9l\u00E9v\\ToDoList_Form\\ToDoList\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\projekt\\ToDoList_Form\\ToDoList\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{143744B3-1E73-49B4-A93C-8F90BACBBB26}|ToDoList.csproj|c:\\suli\\3.f\u00E9l\u00E9v\\todolist_form\\todolist\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{143744B3-1E73-49B4-A93C-8F90BACBBB26}|ToDoList.csproj|c:\\users\\user\\documents\\github\\projekt\\todolist_form\\todolist\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{143744B3-1E73-49B4-A93C-8F90BACBBB26}|ToDoList.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{143744B3-1E73-49B4-A93C-8F90BACBBB26}|ToDoList.csproj|c:\\suli\\3.f\u00E9l\u00E9v\\todolist_form\\todolist\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{143744B3-1E73-49B4-A93C-8F90BACBBB26}|ToDoList.csproj|c:\\users\\user\\documents\\github\\projekt\\todolist_form\\todolist\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{143744B3-1E73-49B4-A93C-8F90BACBBB26}|ToDoList.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -32,11 +32,11 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Suli\\3.f\u00E9l\u00E9v\\ToDoList_Form\\ToDoList\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\projekt\\ToDoList_Form\\ToDoList\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Suli\\3.f\u00E9l\u00E9v\\ToDoList_Form\\ToDoList\\Form1.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\projekt\\ToDoList_Form\\ToDoList\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T16:58:17.573Z",
               "EditorCaption": ""
@@ -45,9 +45,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Suli\\3.f\u00E9l\u00E9v\\ToDoList_Form\\ToDoList\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\projekt\\ToDoList_Form\\ToDoList\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Suli\\3.f\u00E9l\u00E9v\\ToDoList_Form\\ToDoList\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\projekt\\ToDoList_Form\\ToDoList\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T16:52:43.632Z",
