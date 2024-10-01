@@ -1,0 +1,17 @@
+C:\Suli\3.félév\ToDoList_Form\ToDoList\bin\Debug\net8.0-windows\ToDoList.exe
+C:\Suli\3.félév\ToDoList_Form\ToDoList\bin\Debug\net8.0-windows\ToDoList.deps.json
+C:\Suli\3.félév\ToDoList_Form\ToDoList\bin\Debug\net8.0-windows\ToDoList.runtimeconfig.json
+C:\Suli\3.félév\ToDoList_Form\ToDoList\bin\Debug\net8.0-windows\ToDoList.dll
+C:\Suli\3.félév\ToDoList_Form\ToDoList\bin\Debug\net8.0-windows\ToDoList.pdb
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\ToDoList.Form1.resources
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\ToDoList.Properties.Resources.resources
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\ToDoList.csproj.GenerateResource.cache
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\ToDoList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\ToDoList.AssemblyInfoInputs.cache
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\ToDoList.AssemblyInfo.cs
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\ToDoList.csproj.CoreCompileInputs.cache
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\ToDoList.dll
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\refint\ToDoList.dll
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\ToDoList.pdb
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\ToDoList.genruntimeconfig.cache
+C:\Suli\3.félév\ToDoList_Form\ToDoList\obj\Debug\net8.0-windows\ref\ToDoList.dll
