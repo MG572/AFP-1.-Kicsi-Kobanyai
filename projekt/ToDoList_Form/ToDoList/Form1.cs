@@ -14,8 +14,13 @@ namespace ToDoList
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
 
+
+        }
+
+        private void App_quit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

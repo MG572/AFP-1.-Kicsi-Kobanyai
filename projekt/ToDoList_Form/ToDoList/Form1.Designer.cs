@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
-            button1 = new Button();
+            App_quit = new Button();
             label1 = new Label();
             panel2 = new Panel();
             label2 = new Label();
@@ -40,7 +40,7 @@
             textBox1 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             label4 = new Label();
-            comboBox1 = new ComboBox();
+            comboBoxPriority = new ComboBox();
             label5 = new Label();
             label6 = new Label();
             checkBox1 = new CheckBox();
@@ -56,7 +56,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(64, 64, 64);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(App_quit);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -64,18 +64,19 @@
             panel1.Size = new Size(1088, 60);
             panel1.TabIndex = 0;
             // 
-            // button1
+            // App_quit
             // 
-            button1.BackColor = Color.Black;
-            button1.Dock = DockStyle.Right;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button1.ForeColor = SystemColors.Window;
-            button1.Location = new Point(1013, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 60);
-            button1.TabIndex = 7;
-            button1.Text = "Kilépés";
-            button1.UseVisualStyleBackColor = false;
+            App_quit.BackColor = Color.Black;
+            App_quit.Dock = DockStyle.Right;
+            App_quit.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            App_quit.ForeColor = SystemColors.Window;
+            App_quit.Location = new Point(1013, 0);
+            App_quit.Name = "App_quit";
+            App_quit.Size = new Size(75, 60);
+            App_quit.TabIndex = 7;
+            App_quit.Text = "Kilépés";
+            App_quit.UseVisualStyleBackColor = false;
+            App_quit.Click += App_quit_Click;
             // 
             // label1
             // 
@@ -173,15 +174,15 @@
             label4.TabIndex = 3;
             label4.Text = "Priorítás:";
             // 
-            // comboBox1
+            // comboBoxPriority
             // 
-            comboBox1.BackColor = Color.Black;
-            comboBox1.ForeColor = SystemColors.Window;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(396, 98);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 1;
+            comboBoxPriority.BackColor = Color.Black;
+            comboBoxPriority.ForeColor = SystemColors.Window;
+            comboBoxPriority.FormattingEnabled = true;
+            comboBoxPriority.Location = new Point(396, 98);
+            comboBoxPriority.Name = "comboBoxPriority";
+            comboBoxPriority.Size = new Size(121, 23);
+            comboBoxPriority.TabIndex = 1;
             // 
             // label5
             // 
@@ -280,7 +281,7 @@
             Controls.Add(checkBox1);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxPriority);
             Controls.Add(label4);
             Controls.Add(dateTimePicker1);
             Controls.Add(textBox1);
@@ -314,11 +315,11 @@
         private TextBox textBox1;
         private DateTimePicker dateTimePicker1;
         private Label label4;
-        private ComboBox comboBox1;
+        private ComboBox comboBoxPriority;
         private Label label5;
         private Label label6;
         private CheckBox checkBox1;
-        private Button button1;
+        private Button App_quit;
         private Button button2;
         private Button button3;
         private Button button4;
