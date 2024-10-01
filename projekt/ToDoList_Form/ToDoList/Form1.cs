@@ -5,6 +5,7 @@ namespace ToDoList
         public Form1()
         {
             InitializeComponent();
+            comboBoxPriority.Items.AddRange(new string[] { "Alacsony", "Közepes", "Magas" });
         }
 
         private void Form1_Load(object sender, EventArgs e)

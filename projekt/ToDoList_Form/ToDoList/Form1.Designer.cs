@@ -172,16 +172,17 @@
             label4.Name = "label4";
             label4.Size = new Size(92, 25);
             label4.TabIndex = 3;
-            label4.Text = "Priorítás:";
+            label4.Text = "Prioritás:";
             // 
             // comboBoxPriority
             // 
             comboBoxPriority.BackColor = Color.Black;
+            comboBoxPriority.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
             comboBoxPriority.ForeColor = SystemColors.Window;
             comboBoxPriority.FormattingEnabled = true;
             comboBoxPriority.Location = new Point(396, 98);
             comboBoxPriority.Name = "comboBoxPriority";
-            comboBoxPriority.Size = new Size(121, 23);
+            comboBoxPriority.Size = new Size(121, 25);
             comboBoxPriority.TabIndex = 1;
             // 
             // label5
