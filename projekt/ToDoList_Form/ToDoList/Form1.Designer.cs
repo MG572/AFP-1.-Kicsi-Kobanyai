@@ -44,7 +44,7 @@
             label5 = new Label();
             label6 = new Label();
             doneCheckBox = new CheckBox();
-            addButton = new Button();
+            buttonAdd = new Button();
             editButton = new Button();
             deleteButton = new Button();
             outputButton = new Button();
@@ -154,6 +154,7 @@
             taskNameTextBox.Name = "taskNameTextBox";
             taskNameTextBox.Size = new Size(128, 25);
             taskNameTextBox.TabIndex = 1;
+            taskNameTextBox.Click += buttonAdd_Click;
             // 
             // dateTimePicker
             // 
@@ -222,17 +223,18 @@
             doneCheckBox.Text = "Kész";
             doneCheckBox.UseVisualStyleBackColor = false;
             // 
-            // addButton
+            // buttonAdd
             // 
-            addButton.BackColor = Color.Black;
-            addButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            addButton.ForeColor = SystemColors.Window;
-            addButton.Location = new Point(651, 157);
-            addButton.Name = "addButton";
-            addButton.Size = new Size(89, 60);
-            addButton.TabIndex = 8;
-            addButton.Text = "Hozzád";
-            addButton.UseVisualStyleBackColor = false;
+            buttonAdd.BackColor = Color.Black;
+            buttonAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            buttonAdd.ForeColor = SystemColors.Window;
+            buttonAdd.Location = new Point(651, 157);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(89, 60);
+            buttonAdd.TabIndex = 8;
+            buttonAdd.Text = "Hozzád";
+            buttonAdd.UseVisualStyleBackColor = false;
+            buttonAdd.Click += buttonAdd_Click;
             // 
             // editButton
             // 
@@ -279,7 +281,7 @@
             Controls.Add(outputButton);
             Controls.Add(deleteButton);
             Controls.Add(editButton);
-            Controls.Add(addButton);
+            Controls.Add(buttonAdd);
             Controls.Add(doneCheckBox);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -322,7 +324,7 @@
         private Label label6;
         private CheckBox doneCheckBox;
         private Button App_quit;
-        private Button addButton;
+        private Button buttonAdd;
         private Button editButton;
         private Button deleteButton;
         private Button outputButton;
