@@ -46,7 +46,7 @@
             doneCheckBox = new CheckBox();
             buttonAdd = new Button();
             editButton = new Button();
-            deleteButton = new Button();
+            buttonDelete = new Button();
             outputButton = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -249,17 +249,18 @@
             editButton.UseVisualStyleBackColor = false;
             editButton.Click += editButton_Click;
             // 
-            // deleteButton
+            // buttonDelete
             // 
-            deleteButton.BackColor = Color.Red;
-            deleteButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            deleteButton.ForeColor = SystemColors.Window;
-            deleteButton.Location = new Point(970, 157);
-            deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(89, 60);
-            deleteButton.TabIndex = 10;
-            deleteButton.Text = "Töröl";
-            deleteButton.UseVisualStyleBackColor = false;
+            buttonDelete.BackColor = Color.Red;
+            buttonDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            buttonDelete.ForeColor = SystemColors.Window;
+            buttonDelete.Location = new Point(970, 157);
+            buttonDelete.Name = "buttonDelete";
+            buttonDelete.Size = new Size(89, 60);
+            buttonDelete.TabIndex = 10;
+            buttonDelete.Text = "Töröl";
+            buttonDelete.UseVisualStyleBackColor = false;
+            buttonDelete.Click += buttonDelete_Click;
             // 
             // outputButton
             // 
@@ -272,6 +273,7 @@
             outputButton.TabIndex = 11;
             outputButton.Text = "Fájlba írás";
             outputButton.UseVisualStyleBackColor = false;
+            outputButton.Click += outputButton_Click;
             // 
             // Form1
             // 
@@ -279,7 +281,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1088, 559);
             Controls.Add(outputButton);
-            Controls.Add(deleteButton);
+            Controls.Add(buttonDelete);
             Controls.Add(editButton);
             Controls.Add(buttonAdd);
             Controls.Add(doneCheckBox);
@@ -326,7 +328,7 @@
         private Button App_quit;
         private Button buttonAdd;
         private Button editButton;
-        private Button deleteButton;
+        private Button buttonDelete;
         private Button outputButton;
     }
 }
