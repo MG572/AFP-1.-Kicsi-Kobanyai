@@ -291,7 +291,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.Fixed3D;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             Text = "ToDoList";
             Load += Form1_Load;
