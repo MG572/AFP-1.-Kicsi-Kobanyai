@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Documents\\GVN5FX\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj": {}
+    "C:\\Users\\user\\Documents\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Documents\\GVN5FX\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj": {
+    "C:\\Users\\user\\Documents\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\GVN5FX\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj",
         "projectName": "ToDoList",
-        "projectPath": "C:\\Users\\user\\Documents\\GVN5FX\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj",
+        "projectPath": "C:\\Users\\user\\Documents\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\GVN5FX\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\obj\\",
+        "outputPath": "C:\\Users\\user\\Documents\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
