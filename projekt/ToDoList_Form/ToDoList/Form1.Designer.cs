@@ -233,6 +233,7 @@
             buttonAdd.TabIndex = 8;
             buttonAdd.Text = "Hozzád";
             buttonAdd.UseVisualStyleBackColor = false;
+            buttonAdd.Click += buttonAdd_Click;
             // 
             // buttonEdit
             // 
