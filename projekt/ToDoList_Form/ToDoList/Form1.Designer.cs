@@ -45,7 +45,7 @@
             label6 = new Label();
             checkBoxCompleted = new CheckBox();
             buttonAdd = new Button();
-            button3 = new Button();
+            buttonEdit = new Button();
             button4 = new Button();
             button5 = new Button();
             panel1.SuspendLayout();
@@ -234,17 +234,17 @@
             buttonAdd.Text = "Hozzád";
             buttonAdd.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // buttonEdit
             // 
-            button3.BackColor = Color.Black;
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button3.ForeColor = SystemColors.Window;
-            button3.Location = new Point(816, 157);
-            button3.Name = "button3";
-            button3.Size = new Size(89, 60);
-            button3.TabIndex = 9;
-            button3.Text = "Szerkeszt";
-            button3.UseVisualStyleBackColor = false;
+            buttonEdit.BackColor = Color.Black;
+            buttonEdit.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            buttonEdit.ForeColor = SystemColors.Window;
+            buttonEdit.Location = new Point(816, 157);
+            buttonEdit.Name = "buttonEdit";
+            buttonEdit.Size = new Size(89, 60);
+            buttonEdit.TabIndex = 9;
+            buttonEdit.Text = "Szerkeszt";
+            buttonEdit.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -277,7 +277,7 @@
             ClientSize = new Size(1088, 559);
             Controls.Add(button5);
             Controls.Add(button4);
-            Controls.Add(button3);
+            Controls.Add(buttonEdit);
             Controls.Add(buttonAdd);
             Controls.Add(checkBoxCompleted);
             Controls.Add(label6);
@@ -322,7 +322,7 @@
         private CheckBox checkBoxCompleted;
         private Button App_quit;
         private Button buttonAdd;
-        private Button button3;
+        private Button buttonEdit;
         private Button button4;
         private Button button5;
     }
