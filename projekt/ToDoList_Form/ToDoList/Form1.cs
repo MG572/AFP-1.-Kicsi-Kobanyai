@@ -77,6 +77,27 @@ namespace ToDoList
             dateTimePicker.Value = DateTime.Now;
             doneCheckBox.Checked = false;
         }
-        
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (taskListBox.SelectedItem != null)
+            {
+                taskListBox.Items.Remove(taskListBox.SelectedItem);
+                ClearFields();
+            }
+        }
+
+        private void outputButton_Click(object sender, EventArgs e)
+        {
+            using (StreamWriter writer = new StreamWriter("Teendok.txt"))
+            {
+                foreach (var item in taskListBox.Items)
+                {
+                    writer.WriteLine(item.ToString());
+                }
+            }
+
+            MessageBox.Show("Feladatok mentve a Teendok.txt fájlba.", "Mentés", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
