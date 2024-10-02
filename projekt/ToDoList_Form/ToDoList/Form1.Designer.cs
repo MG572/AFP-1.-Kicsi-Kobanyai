@@ -35,19 +35,19 @@
             panel2 = new Panel();
             label2 = new Label();
             pictureBox1 = new PictureBox();
-            listBoxTasks = new ListBox();
+            taskListBox = new ListBox();
             label3 = new Label();
-            textBoxTask = new TextBox();
+            taskNameTextBox = new TextBox();
             dateTimePicker = new DateTimePicker();
             label4 = new Label();
-            comboBoxPriority = new ComboBox();
+            priorityComboBox = new ComboBox();
             label5 = new Label();
             label6 = new Label();
-            checkBoxCompleted = new CheckBox();
-            buttonAdd = new Button();
-            buttonEdit = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            doneCheckBox = new CheckBox();
+            addButton = new Button();
+            editButton = new Button();
+            deleteButton = new Button();
+            outputButton = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -121,17 +121,17 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // listBoxTasks
+            // taskListBox
             // 
-            listBoxTasks.BackColor = SystemColors.WindowFrame;
-            listBoxTasks.ForeColor = SystemColors.Window;
-            listBoxTasks.FormattingEnabled = true;
-            listBoxTasks.ItemHeight = 15;
-            listBoxTasks.Location = new Point(12, 157);
-            listBoxTasks.Name = "listBoxTasks";
-            listBoxTasks.Size = new Size(592, 349);
-            listBoxTasks.TabIndex = 1;
-            listBoxTasks.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            taskListBox.BackColor = SystemColors.WindowFrame;
+            taskListBox.ForeColor = SystemColors.Window;
+            taskListBox.FormattingEnabled = true;
+            taskListBox.ItemHeight = 15;
+            taskListBox.Location = new Point(12, 157);
+            taskListBox.Name = "taskListBox";
+            taskListBox.Size = new Size(592, 349);
+            taskListBox.TabIndex = 1;
+            taskListBox.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -145,15 +145,15 @@
             label3.TabIndex = 1;
             label3.Text = "Feladat neve:";
             // 
-            // textBoxTask
+            // taskNameTextBox
             // 
-            textBoxTask.BackColor = Color.Black;
-            textBoxTask.ForeColor = SystemColors.Window;
-            textBoxTask.Location = new Point(146, 98);
-            textBoxTask.Multiline = true;
-            textBoxTask.Name = "textBoxTask";
-            textBoxTask.Size = new Size(128, 25);
-            textBoxTask.TabIndex = 1;
+            taskNameTextBox.BackColor = Color.Black;
+            taskNameTextBox.ForeColor = SystemColors.Window;
+            taskNameTextBox.Location = new Point(146, 98);
+            taskNameTextBox.Multiline = true;
+            taskNameTextBox.Name = "taskNameTextBox";
+            taskNameTextBox.Size = new Size(128, 25);
+            taskNameTextBox.TabIndex = 1;
             // 
             // dateTimePicker
             // 
@@ -174,16 +174,16 @@
             label4.TabIndex = 3;
             label4.Text = "Prioritás:";
             // 
-            // comboBoxPriority
+            // priorityComboBox
             // 
-            comboBoxPriority.BackColor = Color.Black;
-            comboBoxPriority.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            comboBoxPriority.ForeColor = SystemColors.Window;
-            comboBoxPriority.FormattingEnabled = true;
-            comboBoxPriority.Location = new Point(396, 98);
-            comboBoxPriority.Name = "comboBoxPriority";
-            comboBoxPriority.Size = new Size(121, 25);
-            comboBoxPriority.TabIndex = 1;
+            priorityComboBox.BackColor = Color.Black;
+            priorityComboBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            priorityComboBox.ForeColor = SystemColors.Window;
+            priorityComboBox.FormattingEnabled = true;
+            priorityComboBox.Location = new Point(396, 98);
+            priorityComboBox.Name = "priorityComboBox";
+            priorityComboBox.Size = new Size(121, 25);
+            priorityComboBox.TabIndex = 1;
             // 
             // label5
             // 
@@ -209,86 +209,86 @@
             label6.TabIndex = 5;
             label6.Text = "Kész van- e";
             // 
-            // checkBoxCompleted
+            // doneCheckBox
             // 
-            checkBoxCompleted.AutoSize = true;
-            checkBoxCompleted.BackColor = Color.Black;
-            checkBoxCompleted.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            checkBoxCompleted.ForeColor = SystemColors.Window;
-            checkBoxCompleted.Location = new Point(566, 124);
-            checkBoxCompleted.Name = "checkBoxCompleted";
-            checkBoxCompleted.Size = new Size(52, 19);
-            checkBoxCompleted.TabIndex = 6;
-            checkBoxCompleted.Text = "Kész";
-            checkBoxCompleted.UseVisualStyleBackColor = false;
+            doneCheckBox.AutoSize = true;
+            doneCheckBox.BackColor = Color.Black;
+            doneCheckBox.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            doneCheckBox.ForeColor = SystemColors.Window;
+            doneCheckBox.Location = new Point(566, 124);
+            doneCheckBox.Name = "doneCheckBox";
+            doneCheckBox.Size = new Size(52, 19);
+            doneCheckBox.TabIndex = 6;
+            doneCheckBox.Text = "Kész";
+            doneCheckBox.UseVisualStyleBackColor = false;
             // 
-            // buttonAdd
+            // addButton
             // 
-            buttonAdd.BackColor = Color.Black;
-            buttonAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            buttonAdd.ForeColor = SystemColors.Window;
-            buttonAdd.Location = new Point(651, 157);
-            buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(89, 60);
-            buttonAdd.TabIndex = 8;
-            buttonAdd.Text = "Hozzád";
-            buttonAdd.UseVisualStyleBackColor = false;
-            buttonAdd.Click += buttonAdd_Click;
+            addButton.BackColor = Color.Black;
+            addButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            addButton.ForeColor = SystemColors.Window;
+            addButton.Location = new Point(651, 157);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(89, 60);
+            addButton.TabIndex = 8;
+            addButton.Text = "Hozzád";
+            addButton.UseVisualStyleBackColor = false;
             // 
-            // buttonEdit
+            // editButton
             // 
-            buttonEdit.BackColor = Color.Black;
-            buttonEdit.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            buttonEdit.ForeColor = SystemColors.Window;
-            buttonEdit.Location = new Point(816, 157);
-            buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(89, 60);
-            buttonEdit.TabIndex = 9;
-            buttonEdit.Text = "Szerkeszt";
-            buttonEdit.UseVisualStyleBackColor = false;
+            editButton.BackColor = Color.Black;
+            editButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            editButton.ForeColor = SystemColors.Window;
+            editButton.Location = new Point(816, 157);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(89, 60);
+            editButton.TabIndex = 9;
+            editButton.Text = "Szerkeszt";
+            editButton.UseVisualStyleBackColor = false;
+            editButton.Click += editButton_Click;
             // 
-            // button4
+            // deleteButton
             // 
-            button4.BackColor = Color.Red;
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button4.ForeColor = SystemColors.Window;
-            button4.Location = new Point(970, 157);
-            button4.Name = "button4";
-            button4.Size = new Size(89, 60);
-            button4.TabIndex = 10;
-            button4.Text = "Töröl";
-            button4.UseVisualStyleBackColor = false;
+            deleteButton.BackColor = Color.Red;
+            deleteButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            deleteButton.ForeColor = SystemColors.Window;
+            deleteButton.Location = new Point(970, 157);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(89, 60);
+            deleteButton.TabIndex = 10;
+            deleteButton.Text = "Töröl";
+            deleteButton.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // outputButton
             // 
-            button5.BackColor = Color.Black;
-            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button5.ForeColor = SystemColors.Window;
-            button5.Location = new Point(816, 464);
-            button5.Name = "button5";
-            button5.Size = new Size(89, 60);
-            button5.TabIndex = 11;
-            button5.Text = "Fájlba írás";
-            button5.UseVisualStyleBackColor = false;
+            outputButton.BackColor = Color.Black;
+            outputButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            outputButton.ForeColor = SystemColors.Window;
+            outputButton.Location = new Point(816, 464);
+            outputButton.Name = "outputButton";
+            outputButton.Size = new Size(89, 60);
+            outputButton.TabIndex = 11;
+            outputButton.Text = "Fájlba írás";
+            outputButton.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1088, 559);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(buttonEdit);
-            Controls.Add(buttonAdd);
-            Controls.Add(checkBoxCompleted);
+            Controls.Add(outputButton);
+            Controls.Add(deleteButton);
+            Controls.Add(editButton);
+            Controls.Add(addButton);
+            Controls.Add(doneCheckBox);
             Controls.Add(label6);
             Controls.Add(label5);
-            Controls.Add(comboBoxPriority);
+            Controls.Add(priorityComboBox);
             Controls.Add(label4);
             Controls.Add(dateTimePicker);
-            Controls.Add(textBoxTask);
+            Controls.Add(taskNameTextBox);
             Controls.Add(label3);
-            Controls.Add(listBoxTasks);
+            Controls.Add(taskListBox);
             Controls.Add(pictureBox1);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -312,19 +312,19 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
-        private ListBox listBoxTasks;
+        private ListBox taskListBox;
         private Label label3;
-        private TextBox textBoxTask;
+        private TextBox taskNameTextBox;
         private DateTimePicker dateTimePicker;
         private Label label4;
-        private ComboBox comboBoxPriority;
+        private ComboBox priorityComboBox;
         private Label label5;
         private Label label6;
-        private CheckBox checkBoxCompleted;
+        private CheckBox doneCheckBox;
         private Button App_quit;
-        private Button buttonAdd;
-        private Button buttonEdit;
-        private Button button4;
-        private Button button5;
+        private Button addButton;
+        private Button editButton;
+        private Button deleteButton;
+        private Button outputButton;
     }
 }

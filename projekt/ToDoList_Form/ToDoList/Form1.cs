@@ -7,7 +7,7 @@ namespace ToDoList
         public Form1()
         {
             InitializeComponent();
-            comboBoxPriority.Items.AddRange(new string[] { "Alacsony", "Közepes", "Magas" });
+            priorityComboBox.Items.AddRange(new string[] { "Alacsony", "Közepes", "Magas" });
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -48,5 +48,35 @@ namespace ToDoList
                 Application.Exit();
             }
         }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            if (taskListBox.SelectedItem != null)
+            {
+                string task = taskListBox.Text;
+                string priority = priorityComboBox.SelectedItem?.ToString() ?? "Nincs megadva";
+                string date = dateTimePicker.Value.ToShortDateString();
+                string completed = doneCheckBox.Checked ? "Kész" : "";
+
+                if (!string.IsNullOrWhiteSpace(task))
+                {
+                    int selectedIndex = taskListBox.SelectedIndex;
+                    taskListBox.Items[selectedIndex] = $"{task} - Prioritás: {priority} - Dátum: {date} - {completed}";
+                    ClearFields();
+                }
+                else
+                {
+                    MessageBox.Show("Kérlek, add meg a feladatot!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+        private void ClearFields()
+        {
+            taskNameTextBox.Clear();
+            priorityComboBox.SelectedIndex = -1;
+            dateTimePicker.Value = DateTime.Now;
+            doneCheckBox.Checked = false;
+        }
+        
     }
 }
