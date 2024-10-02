@@ -35,16 +35,16 @@
             panel2 = new Panel();
             label2 = new Label();
             pictureBox1 = new PictureBox();
-            listBox1 = new ListBox();
+            listBoxTasks = new ListBox();
             label3 = new Label();
-            textBox1 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            textBoxTask = new TextBox();
+            dateTimePicker = new DateTimePicker();
             label4 = new Label();
             comboBoxPriority = new ComboBox();
             label5 = new Label();
             label6 = new Label();
-            checkBox1 = new CheckBox();
-            button2 = new Button();
+            checkBoxCompleted = new CheckBox();
+            buttonAdd = new Button();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
@@ -121,17 +121,17 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // listBox1
+            // listBoxTasks
             // 
-            listBox1.BackColor = SystemColors.WindowFrame;
-            listBox1.ForeColor = SystemColors.Window;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 157);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(592, 349);
-            listBox1.TabIndex = 1;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+            listBoxTasks.BackColor = SystemColors.WindowFrame;
+            listBoxTasks.ForeColor = SystemColors.Window;
+            listBoxTasks.FormattingEnabled = true;
+            listBoxTasks.ItemHeight = 15;
+            listBoxTasks.Location = new Point(12, 157);
+            listBoxTasks.Name = "listBoxTasks";
+            listBoxTasks.Size = new Size(592, 349);
+            listBoxTasks.TabIndex = 1;
+            listBoxTasks.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -145,22 +145,22 @@
             label3.TabIndex = 1;
             label3.Text = "Feladat neve:";
             // 
-            // textBox1
+            // textBoxTask
             // 
-            textBox1.BackColor = Color.Black;
-            textBox1.ForeColor = SystemColors.Window;
-            textBox1.Location = new Point(146, 98);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(128, 25);
-            textBox1.TabIndex = 1;
+            textBoxTask.BackColor = Color.Black;
+            textBoxTask.ForeColor = SystemColors.Window;
+            textBoxTask.Location = new Point(146, 98);
+            textBoxTask.Multiline = true;
+            textBoxTask.Name = "textBoxTask";
+            textBoxTask.Size = new Size(128, 25);
+            textBoxTask.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            dateTimePicker1.Location = new Point(773, 272);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(182, 23);
-            dateTimePicker1.TabIndex = 1;
+            dateTimePicker.Location = new Point(773, 272);
+            dateTimePicker.Name = "dateTimePicker";
+            dateTimePicker.Size = new Size(182, 23);
+            dateTimePicker.TabIndex = 1;
             // 
             // label4
             // 
@@ -209,30 +209,30 @@
             label6.TabIndex = 5;
             label6.Text = "Kész van- e";
             // 
-            // checkBox1
+            // checkBoxCompleted
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.Black;
-            checkBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            checkBox1.ForeColor = SystemColors.Window;
-            checkBox1.Location = new Point(566, 124);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(52, 19);
-            checkBox1.TabIndex = 6;
-            checkBox1.Text = "Kész";
-            checkBox1.UseVisualStyleBackColor = false;
+            checkBoxCompleted.AutoSize = true;
+            checkBoxCompleted.BackColor = Color.Black;
+            checkBoxCompleted.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            checkBoxCompleted.ForeColor = SystemColors.Window;
+            checkBoxCompleted.Location = new Point(566, 124);
+            checkBoxCompleted.Name = "checkBoxCompleted";
+            checkBoxCompleted.Size = new Size(52, 19);
+            checkBoxCompleted.TabIndex = 6;
+            checkBoxCompleted.Text = "Kész";
+            checkBoxCompleted.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // buttonAdd
             // 
-            button2.BackColor = Color.Black;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            button2.ForeColor = SystemColors.Window;
-            button2.Location = new Point(651, 157);
-            button2.Name = "button2";
-            button2.Size = new Size(89, 60);
-            button2.TabIndex = 8;
-            button2.Text = "Hozzád";
-            button2.UseVisualStyleBackColor = false;
+            buttonAdd.BackColor = Color.Black;
+            buttonAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            buttonAdd.ForeColor = SystemColors.Window;
+            buttonAdd.Location = new Point(651, 157);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(89, 60);
+            buttonAdd.TabIndex = 8;
+            buttonAdd.Text = "Hozzád";
+            buttonAdd.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -278,16 +278,16 @@
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(checkBox1);
+            Controls.Add(buttonAdd);
+            Controls.Add(checkBoxCompleted);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(comboBoxPriority);
             Controls.Add(label4);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox1);
+            Controls.Add(dateTimePicker);
+            Controls.Add(textBoxTask);
             Controls.Add(label3);
-            Controls.Add(listBox1);
+            Controls.Add(listBoxTasks);
             Controls.Add(pictureBox1);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -311,17 +311,17 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
-        private ListBox listBox1;
+        private ListBox listBoxTasks;
         private Label label3;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
+        private TextBox textBoxTask;
+        private DateTimePicker dateTimePicker;
         private Label label4;
         private ComboBox comboBoxPriority;
         private Label label5;
         private Label label6;
-        private CheckBox checkBox1;
+        private CheckBox checkBoxCompleted;
         private Button App_quit;
-        private Button button2;
+        private Button buttonAdd;
         private Button button3;
         private Button button4;
         private Button button5;
