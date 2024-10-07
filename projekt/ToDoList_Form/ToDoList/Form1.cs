@@ -16,15 +16,18 @@ namespace ToDoList
             string date = dateTimePicker.Value.ToShortDateString();
             string completed = doneCheckBox.Checked ? "Kész" : "";
 
-            if (!string.IsNullOrWhiteSpace(task))
+            if (string.IsNullOrEmpty(task))
             {
-                taskListBox.Items.Add($"{task} - Prioritás: {priority} - Dátum: {date} - {completed}");
-                ClearFields(); // Törölni a mezõket
+                MessageBox.Show("Kérlek, add meg a feladatot!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
             else
             {
-                MessageBox.Show("Kérlek, add meg a feladatot!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                taskListBox.Items.Add($"{task} - Prioritás: {priority} - Dátum: {date} - {completed}");
+                ClearFields(); // Törölni a mezõket
+
             }
+
         }
 
 
@@ -58,7 +61,7 @@ namespace ToDoList
                 string date = dateTimePicker.Value.ToShortDateString();
                 string completed = doneCheckBox.Checked ? "Kész" : "";
 
-                if (!string.IsNullOrWhiteSpace(task))
+                if (!string.IsNullOrEmpty(task))
                 {
                     int selectedIndex = taskListBox.SelectedIndex;
                     taskListBox.Items[selectedIndex] = $"{task} - Prioritás: {priority} - Dátum: {date} - {completed}";
@@ -98,6 +101,21 @@ namespace ToDoList
             }
 
             MessageBox.Show("Feladatok mentve a Teendok.txt fájlba.", "Mentés", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void doneCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
