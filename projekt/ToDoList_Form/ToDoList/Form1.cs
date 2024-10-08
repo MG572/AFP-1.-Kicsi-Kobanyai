@@ -8,6 +8,8 @@ namespace ToDoList
         {
             InitializeComponent();
             priorityComboBox.Items.AddRange(new string[] { "Alacsony", "Közepes", "Magas" });
+            taskListBox.DrawMode = DrawMode.OwnerDrawFixed;
+            taskListBox.DrawItem += taskListBox_DrawItem;
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -33,7 +35,7 @@ namespace ToDoList
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            taskListBox.DrawMode = DrawMode.OwnerDrawFixed;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
