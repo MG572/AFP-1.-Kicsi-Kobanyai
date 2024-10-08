@@ -56,14 +56,15 @@ namespace ToDoList
         {
             if (taskListBox.SelectedItem != null)
             {
-                string task = taskListBox.Text;
+                int selectedIndex = taskListBox.SelectedIndex;
+
+                string task = taskNameTextBox.Text;
                 string priority = priorityComboBox.SelectedItem?.ToString() ?? "Nincs megadva";
                 string date = dateTimePicker.Value.ToShortDateString();
                 string completed = doneCheckBox.Checked ? "Kész" : "";
 
                 if (!string.IsNullOrEmpty(task))
                 {
-                    int selectedIndex = taskListBox.SelectedIndex;
                     taskListBox.Items[selectedIndex] = $"{task} - Prioritás: {priority} - Dátum: {date} - {completed}";
                     ClearFields();
                 }
@@ -73,6 +74,7 @@ namespace ToDoList
                 }
             }
         }
+
         private void ClearFields()
         {
             taskNameTextBox.Clear();
@@ -116,6 +118,31 @@ namespace ToDoList
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void taskListBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            string itemText = taskListBox.Items[e.Index].ToString();
+
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+            {
+                e.Graphics.FillRectangle(Brushes.LightBlue, e.Bounds);
+            }
+            else if (itemText.Contains("Kész"))
+            {
+                e.Graphics.FillRectangle(Brushes.LightGreen, e.Bounds);
+            }
+            else
+            {
+                e.Graphics.FillRectangle(Brushes.White, e.Bounds);
+            }
+
+            Color textColor = Color.Black;
+
+            e.Graphics.DrawString(itemText, e.Font, new SolidBrush(textColor), e.Bounds);
+            e.DrawFocusRectangle();
         }
     }
 }

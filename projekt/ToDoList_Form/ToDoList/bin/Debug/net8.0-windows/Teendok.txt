@@ -1,1 +1,2 @@
-Gooning - Prioritás: Magas - Dátum: 2024. 10. 07. -  - Prioritás: Közepes - Dátum: 2024. 10. 07. - 
+teszt3 - Prioritás: Magas - Dátum: 10/8/2024 - Kész
+teszt4 - Prioritás: Alacsony - Dátum: 10/11/2024 - 
