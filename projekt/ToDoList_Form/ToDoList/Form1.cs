@@ -16,15 +16,18 @@ namespace ToDoList
             string date = dateTimePicker.Value.ToShortDateString();
             string completed = doneCheckBox.Checked ? "Kész" : "";
 
-            if (!string.IsNullOrWhiteSpace(task))
+            if (string.IsNullOrEmpty(task))
             {
-                taskListBox.Items.Add($"{task} - Prioritás: {priority} - Dátum: {date} - {completed}");
-                ClearFields(); // Törölni a mezõket
+                MessageBox.Show("Kérlek, add meg a feladatot!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
             }
             else
             {
-                MessageBox.Show("Kérlek, add meg a feladatot!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                taskListBox.Items.Add($"{task} - Prioritás: {priority} - Dátum: {date} - {completed}");
+                ClearFields(); // Törölni a mezõket
+
             }
+
         }
 
 
@@ -58,7 +61,7 @@ namespace ToDoList
                 string date = dateTimePicker.Value.ToShortDateString();
                 string completed = doneCheckBox.Checked ? "Kész" : "";
 
-                if (!string.IsNullOrWhiteSpace(task))
+                if (!string.IsNullOrEmpty(task))
                 {
                     int selectedIndex = taskListBox.SelectedIndex;
                     taskListBox.Items[selectedIndex] = $"{task} - Prioritás: {priority} - Dátum: {date} - {completed}";
@@ -77,6 +80,42 @@ namespace ToDoList
             dateTimePicker.Value = DateTime.Now;
             doneCheckBox.Checked = false;
         }
-        
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (taskListBox.SelectedItem != null)
+            {
+                taskListBox.Items.Remove(taskListBox.SelectedItem);
+                ClearFields();
+            }
+        }
+
+        private void outputButton_Click(object sender, EventArgs e)
+        {
+            using (StreamWriter writer = new StreamWriter("Teendok.txt"))
+            {
+                foreach (var item in taskListBox.Items)
+                {
+                    writer.WriteLine(item.ToString());
+                }
+            }
+
+            MessageBox.Show("Feladatok mentve a Teendok.txt fájlba.", "Mentés", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void doneCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
