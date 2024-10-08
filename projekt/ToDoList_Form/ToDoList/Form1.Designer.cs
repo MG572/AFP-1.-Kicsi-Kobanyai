@@ -48,6 +48,7 @@
             editButton = new Button();
             buttonDelete = new Button();
             outputButton = new Button();
+            buttonDeleteAll = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -129,7 +130,7 @@
             taskListBox.ForeColor = Color.Black;
             taskListBox.FormattingEnabled = true;
             taskListBox.ItemHeight = 15;
-            taskListBox.Location = new Point(12, 194);
+            taskListBox.Location = new Point(12, 179);
             taskListBox.Name = "taskListBox";
             taskListBox.Size = new Size(588, 304);
             taskListBox.TabIndex = 1;
@@ -163,7 +164,7 @@
             // 
             dateTimePicker.CalendarMonthBackground = Color.FromArgb(245, 201, 41);
             dateTimePicker.CalendarTrailingForeColor = Color.Gray;
-            dateTimePicker.Location = new Point(763, 271);
+            dateTimePicker.Location = new Point(756, 282);
             dateTimePicker.Name = "dateTimePicker";
             dateTimePicker.Size = new Size(207, 23);
             dateTimePicker.TabIndex = 1;
@@ -234,7 +235,7 @@
             buttonAdd.BackColor = Color.White;
             buttonAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             buttonAdd.ForeColor = Color.Black;
-            buttonAdd.Location = new Point(798, 157);
+            buttonAdd.Location = new Point(724, 157);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(118, 60);
             buttonAdd.TabIndex = 8;
@@ -247,7 +248,7 @@
             editButton.BackColor = Color.White;
             editButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             editButton.ForeColor = Color.Black;
-            editButton.Location = new Point(646, 157);
+            editButton.Location = new Point(603, 157);
             editButton.Name = "editButton";
             editButton.Size = new Size(118, 60);
             editButton.TabIndex = 9;
@@ -260,7 +261,7 @@
             buttonDelete.BackColor = Color.FromArgb(192, 0, 0);
             buttonDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             buttonDelete.ForeColor = Color.Black;
-            buttonDelete.Location = new Point(948, 157);
+            buttonDelete.Location = new Point(845, 157);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(118, 60);
             buttonDelete.TabIndex = 10;
@@ -273,7 +274,7 @@
             outputButton.BackColor = Color.FromArgb(245, 201, 41);
             outputButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             outputButton.ForeColor = Color.Black;
-            outputButton.Location = new Point(798, 378);
+            outputButton.Location = new Point(794, 360);
             outputButton.Name = "outputButton";
             outputButton.Size = new Size(118, 60);
             outputButton.TabIndex = 11;
@@ -281,11 +282,24 @@
             outputButton.UseVisualStyleBackColor = false;
             outputButton.Click += outputButton_Click;
             // 
+            // buttonDeleteAll
+            // 
+            buttonDeleteAll.BackColor = Color.FromArgb(192, 0, 0);
+            buttonDeleteAll.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            buttonDeleteAll.Location = new Point(966, 157);
+            buttonDeleteAll.Name = "buttonDeleteAll";
+            buttonDeleteAll.Size = new Size(119, 60);
+            buttonDeleteAll.TabIndex = 12;
+            buttonDeleteAll.Text = "Minden törlése";
+            buttonDeleteAll.UseVisualStyleBackColor = false;
+            buttonDeleteAll.Click += buttonDeleteAll_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1088, 559);
+            Controls.Add(buttonDeleteAll);
             Controls.Add(outputButton);
             Controls.Add(buttonDelete);
             Controls.Add(editButton);
@@ -336,5 +350,6 @@
         private Button buttonDelete;
         private Button outputButton;
         private Button button1;
+        private Button buttonDeleteAll;
     }
 }

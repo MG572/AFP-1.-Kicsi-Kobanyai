@@ -1,4 +1,4 @@
-using System.Windows.Forms;
+Ôªøusing System.Windows.Forms;
 
 namespace ToDoList
 {
@@ -7,7 +7,7 @@ namespace ToDoList
         public Form1()
         {
             InitializeComponent();
-            priorityComboBox.Items.AddRange(new string[] { "Alacsony", "Kˆzepes", "Magas" });
+            priorityComboBox.Items.AddRange(new string[] { "Alacsony", "K√∂zepes", "Magas" });
             taskListBox.DrawMode = DrawMode.OwnerDrawFixed;
             taskListBox.DrawItem += taskListBox_DrawItem;
         }
@@ -16,17 +16,17 @@ namespace ToDoList
             string task = taskNameTextBox.Text;
             string priority = priorityComboBox.SelectedItem?.ToString() ?? "Nincs megadva";
             string date = dateTimePicker.Value.ToShortDateString();
-            string completed = doneCheckBox.Checked ? "KÈsz" : "";
+            string completed = doneCheckBox.Checked ? "K√©sz" : "";
 
             if (string.IsNullOrEmpty(task))
             {
-                MessageBox.Show("KÈrlek, add meg a feladatot!", "FigyelmeztetÈs", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("K√©rlek, add meg a feladatot!", "Figyelmeztet√©s", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
             {
-                taskListBox.Items.Add($"{task} - Priorit·s: {priority} - D·tum: {date} - {completed}");
-                ClearFields(); // Tˆrˆlni a mezıket
+                taskListBox.Items.Add($"{task} - Priorit√°s: {priority} - D√°tum: {date} - {completed}");
+                ClearFields(); // T√∂r√∂lni a mez√µket
 
             }
 
@@ -46,7 +46,7 @@ namespace ToDoList
 
         private void App_quit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Biztosan ki szeretnÈl lÈpni?", "KilÈpÈs megerısÌtÈse", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Biztosan ki szeretn√©l l√©pni?", "Kil√©p√©s meger√µs√≠t√©se", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -63,16 +63,16 @@ namespace ToDoList
                 string task = taskNameTextBox.Text;
                 string priority = priorityComboBox.SelectedItem?.ToString() ?? "Nincs megadva";
                 string date = dateTimePicker.Value.ToShortDateString();
-                string completed = doneCheckBox.Checked ? "KÈsz" : "";
+                string completed = doneCheckBox.Checked ? "K√©sz" : "";
 
                 if (!string.IsNullOrEmpty(task))
                 {
-                    taskListBox.Items[selectedIndex] = $"{task} - Priorit·s: {priority} - D·tum: {date} - {completed}";
+                    taskListBox.Items[selectedIndex] = $"{task} - Priorit√°s: {priority} - D√°tum: {date} - {completed}";
                     ClearFields();
                 }
                 else
                 {
-                    MessageBox.Show("KÈrlek, add meg a feladatot!", "FigyelmeztetÈs", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("K√©rlek, add meg a feladatot!", "Figyelmeztet√©s", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -104,7 +104,7 @@ namespace ToDoList
                 }
             }
 
-            MessageBox.Show("Feladatok mentve a Teendok.txt f·jlba.", "MentÈs", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Feladatok mentve a Teendok.txt f√°jlba.", "Ment√©s", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -132,7 +132,7 @@ namespace ToDoList
             {
                 e.Graphics.FillRectangle(Brushes.LightBlue, e.Bounds);
             }
-            else if (itemText.Contains("KÈsz"))
+            else if (itemText.Contains("K√©sz"))
             {
                 e.Graphics.FillRectangle(Brushes.LightGreen, e.Bounds);
             }
@@ -145,6 +145,17 @@ namespace ToDoList
 
             e.Graphics.DrawString(itemText, e.Font, new SolidBrush(textColor), e.Bounds);
             e.DrawFocusRectangle();
+        }
+
+        private void buttonDeleteAll_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Biztosan t√∂r√∂lni szeretn√©d az √∂sszes feladatot?", "T√∂rl√©s meger≈ës√≠t√©se", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                taskListBox.Items.Clear();
+                ClearFields(); 
+            }
         }
     }
 }
