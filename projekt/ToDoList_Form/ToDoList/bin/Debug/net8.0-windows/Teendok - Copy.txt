@@ -1,0 +1,5 @@
+staea - Prioritás: Alacsony - Dátum: 10/1/2024 - 
+aaa - Prioritás: Alacsony - Dátum: 10/9/2024 - Kész
+please - Prioritás: Közepes - Dátum: 10/9/2024 - 
+xxx - Prioritás: Magas - Dátum: 10/9/2024 - 
+tesztdate - Prioritás: Közepes - Dátum: 10/17/2024 - 

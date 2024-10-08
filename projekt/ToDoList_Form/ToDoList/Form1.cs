@@ -8,8 +8,11 @@ namespace ToDoList
         {
             InitializeComponent();
             priorityComboBox.Items.AddRange(new string[] { "Alacsony", "Közepes", "Magas" });
+            sortComboBox.Items.AddRange(new string[] { "Név szerint", "Prioritás szerint", "Dátum szerint" });
             taskListBox.DrawMode = DrawMode.OwnerDrawFixed;
             taskListBox.DrawItem += taskListBox_DrawItem;
+            sortComboBox.SelectedIndexChanged += sortComboBox_SelectedIndexChanged;
+            taskListBox.SelectedIndexChanged += listBox1_SelectedIndexChanged;
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -40,7 +43,19 @@ namespace ToDoList
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (taskListBox.SelectedItem != null)
+            {
+                string selectedTask = taskListBox.SelectedItem.ToString();
+                string[] parts = selectedTask.Split(new string[] { " - " }, StringSplitOptions.None);
 
+                if (parts.Length >= 3)
+                {
+                    taskNameTextBox.Text = parts[0].Trim();
+                    priorityComboBox.SelectedItem = parts[1].Split(':')[1].Trim();
+                    dateTimePicker.Value = DateTime.Parse(parts[2].Split(':')[1].Trim());
+                    doneCheckBox.Checked = selectedTask.Contains("Kész");
+                }
+            }
 
         }
 
@@ -154,7 +169,122 @@ namespace ToDoList
             if (result == DialogResult.Yes)
             {
                 taskListBox.Items.Clear();
-                ClearFields(); 
+                ClearFields();
+            }
+        }
+
+        private void importButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text Files|*.txt";
+            openFileDialog.Title = "Válassz egy teendõ listát";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string[] lines = File.ReadAllLines(openFileDialog.FileName, System.Text.Encoding.UTF8);
+
+                    foreach (string line in lines)
+                    {
+                        if (line.Contains("-"))
+                        {
+                            taskListBox.Items.Add(line);
+                        }
+                    }
+
+                    MessageBox.Show("Teendõk sikeresen importálva.", "Importálás", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Hiba a fájl olvasásakor: {ex.Message}", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void SortTaskList(string sortBy)
+        {
+            var tasks = taskListBox.Items.Cast<string>().ToList();
+
+            if (sortBy == "Név szerint")
+            {
+                tasks = tasks.OrderBy(task => GetTaskName(task)).ToList();
+            }
+            else if (sortBy == "Prioritás szerint")
+            {
+                tasks = tasks.OrderBy(task => GetPriorityValue(task)).ToList();
+            }
+            else if (sortBy == "Dátum szerint")
+            {
+                tasks = tasks.OrderBy(task => GetTaskDate(task)).ToList();
+            }
+            taskListBox.Items.Clear();
+            foreach (var task in tasks)
+            {
+                taskListBox.Items.Add(task);
+            }
+        }
+
+        private int GetPriorityValue(string task)
+        {
+            var taskParts = task.Split('-');
+
+            if (taskParts.Length >= 2)
+            {
+                var priorityPart = taskParts[1].Trim().Split(':');
+                if (priorityPart.Length == 2)
+                {
+                    if (Enum.TryParse(priorityPart[1].Trim(), true, out Priority priority))
+                    {
+                        return (int)priority; // Magas: 0, Közepes: 1, Alacsony: 2
+                    }
+                }
+            }
+            return (int)Priority.Közepes;
+        }
+        public enum Priority
+        {
+            Magas,
+            Közepes,
+            Alacsony
+        }
+
+        private DateTime GetTaskDate(string task)
+        {
+            var taskParts = task.Split('-');
+
+            if (taskParts.Length >= 3)
+            {
+                var datePart = taskParts[2].Trim().Split(':');
+                if (datePart.Length == 2)
+                {
+                    DateTime date;
+                    if (DateTime.TryParse(datePart[1].Trim(), out date))
+                    {
+                        return date;
+                    }
+                }
+            }
+            return DateTime.MinValue;
+        }
+
+        private string GetTaskName(string task)
+        {
+            var taskParts = task.Split('-');
+
+            if (taskParts.Length >= 1)
+            {
+                return taskParts[0].Trim();
+            }
+            return string.Empty;
+        }
+
+        private void sortComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (sortComboBox.SelectedItem != null)
+            {
+                string selectedSort = sortComboBox.SelectedItem.ToString();
+                SortTaskList(selectedSort);
             }
         }
     }

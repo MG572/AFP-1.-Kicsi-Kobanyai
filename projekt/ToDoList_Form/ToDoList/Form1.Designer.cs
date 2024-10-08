@@ -49,6 +49,9 @@
             buttonDelete = new Button();
             outputButton = new Button();
             buttonDeleteAll = new Button();
+            importButton = new Button();
+            sortLabel = new Label();
+            sortComboBox = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -274,7 +277,7 @@
             outputButton.BackColor = Color.FromArgb(245, 201, 41);
             outputButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             outputButton.ForeColor = Color.Black;
-            outputButton.Location = new Point(794, 360);
+            outputButton.Location = new Point(724, 360);
             outputButton.Name = "outputButton";
             outputButton.Size = new Size(118, 60);
             outputButton.TabIndex = 11;
@@ -294,11 +297,52 @@
             buttonDeleteAll.UseVisualStyleBackColor = false;
             buttonDeleteAll.Click += buttonDeleteAll_Click;
             // 
+            // importButton
+            // 
+            importButton.BackColor = Color.FromArgb(245, 201, 41);
+            importButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            importButton.ForeColor = Color.Black;
+            importButton.Location = new Point(845, 360);
+            importButton.Name = "importButton";
+            importButton.Size = new Size(118, 60);
+            importButton.TabIndex = 13;
+            importButton.Text = "Importálás fájlból";
+            importButton.UseVisualStyleBackColor = false;
+            importButton.Click += importButton_Click;
+            // 
+            // sortLabel
+            // 
+            sortLabel.AutoSize = true;
+            sortLabel.BackColor = Color.White;
+            sortLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            sortLabel.ForeColor = Color.Black;
+            sortLabel.Location = new Point(12, 141);
+            sortLabel.Name = "sortLabel";
+            sortLabel.Size = new Size(95, 25);
+            sortLabel.TabIndex = 15;
+            sortLabel.Text = "Rendezés";
+            // 
+            // sortComboBox
+            // 
+            sortComboBox.BackColor = Color.White;
+            sortComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            sortComboBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            sortComboBox.ForeColor = Color.Black;
+            sortComboBox.FormattingEnabled = true;
+            sortComboBox.Location = new Point(113, 141);
+            sortComboBox.Name = "sortComboBox";
+            sortComboBox.Size = new Size(121, 25);
+            sortComboBox.TabIndex = 14;
+            sortComboBox.SelectedIndexChanged += sortComboBox_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1088, 559);
+            Controls.Add(sortComboBox);
+            Controls.Add(sortLabel);
+            Controls.Add(importButton);
             Controls.Add(buttonDeleteAll);
             Controls.Add(outputButton);
             Controls.Add(buttonDelete);
@@ -351,5 +395,8 @@
         private Button outputButton;
         private Button button1;
         private Button buttonDeleteAll;
+        private Button importButton;
+        private Label sortLabel;
+        private ComboBox sortComboBox;
     }
 }
