@@ -162,7 +162,7 @@
             taskNameTextBox.Margin = new Padding(3, 4, 3, 4);
             taskNameTextBox.Multiline = true;
             taskNameTextBox.Name = "taskNameTextBox";
-            taskNameTextBox.Size = new Size(146, 32);
+            taskNameTextBox.Size = new Size(241, 32);
             taskNameTextBox.TabIndex = 1;
             taskNameTextBox.Click += Form1_Load;
             // 
@@ -182,7 +182,7 @@
             label4.BackColor = Color.White;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(341, 131);
+            label4.Location = new Point(436, 131);
             label4.Name = "label4";
             label4.Size = new Size(118, 32);
             label4.TabIndex = 3;
@@ -195,7 +195,7 @@
             priorityComboBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
             priorityComboBox.ForeColor = Color.Black;
             priorityComboBox.FormattingEnabled = true;
-            priorityComboBox.Location = new Point(465, 131);
+            priorityComboBox.Location = new Point(560, 131);
             priorityComboBox.Margin = new Padding(3, 4, 3, 4);
             priorityComboBox.Name = "priorityComboBox";
             priorityComboBox.Size = new Size(138, 29);
@@ -219,7 +219,7 @@
             label6.BackColor = Color.White;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(617, 131);
+            label6.Location = new Point(712, 131);
             label6.Name = "label6";
             label6.Size = new Size(144, 32);
             label6.TabIndex = 5;
@@ -231,7 +231,7 @@
             doneCheckBox.BackColor = Color.White;
             doneCheckBox.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 238);
             doneCheckBox.ForeColor = Color.Black;
-            doneCheckBox.Location = new Point(651, 167);
+            doneCheckBox.Location = new Point(746, 167);
             doneCheckBox.Margin = new Padding(3, 4, 3, 4);
             doneCheckBox.Name = "doneCheckBox";
             doneCheckBox.Size = new Size(63, 24);
@@ -317,7 +317,7 @@
             sortComboBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
             sortComboBox.ForeColor = Color.Black;
             sortComboBox.FormattingEnabled = true;
-            sortComboBox.Location = new Point(138, 221);
+            sortComboBox.Location = new Point(138, 212);
             sortComboBox.Margin = new Padding(3, 4, 3, 4);
             sortComboBox.Name = "sortComboBox";
             sortComboBox.Size = new Size(138, 29);
@@ -329,7 +329,7 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(14, 222);
+            label7.Location = new Point(14, 213);
             label7.Name = "label7";
             label7.Size = new Size(121, 32);
             label7.TabIndex = 14;

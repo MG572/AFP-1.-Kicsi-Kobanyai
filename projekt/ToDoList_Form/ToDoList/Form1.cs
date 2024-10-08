@@ -14,6 +14,7 @@ namespace ToDoList
 
             taskListBox.DrawMode = DrawMode.OwnerDrawFixed;
             taskListBox.DrawItem += taskListBox_DrawItem;
+            taskListBox.SelectedIndexChanged += taskListBox_SelectedIndexChanged;  // Kijelölt sor esemény kezelése
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -25,15 +26,12 @@ namespace ToDoList
             if (string.IsNullOrEmpty(task))
             {
                 MessageBox.Show("Kérlek, add meg a feladatot!", "Figyelmeztetés", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
             else
             {
                 taskListBox.Items.Add($"{task} - Prioritás: {priority} - Dátum: {date} - {completed}");
                 ClearFields();
-
             }
-
         }
 
         private void taskListBox_DrawItem(object sender, DrawItemEventArgs e)
@@ -41,7 +39,6 @@ namespace ToDoList
             if (e.Index < 0) return;
 
             string taskItem = taskListBox.Items[e.Index].ToString();
-
             bool isCompleted = taskItem.Contains("Kész");
 
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
@@ -56,22 +53,9 @@ namespace ToDoList
             {
                 e.Graphics.FillRectangle(Brushes.White, e.Bounds);
             }
+
             e.Graphics.DrawString(taskItem, e.Font, Brushes.Black, e.Bounds);
             e.DrawFocusRectangle();
-
-            if (taskListBox.SelectedItem != null)
-            {
-                string selectedTask = taskListBox.SelectedItem.ToString();
-                string[] parts = selectedTask.Split(new string[] { " - " }, StringSplitOptions.None);
-
-                if (parts.Length >= 4)
-                {
-                    taskNameTextBox.Text = parts[0].Trim();
-                    priorityComboBox.SelectedItem = parts[1].Trim().Split(':')[1].Trim();
-                    dateTimePicker.Value = DateTime.Parse(parts[2].Trim().Split(':')[1].Trim());
-                    doneCheckBox.Checked = parts[3].Trim() == "Kész";
-                }
-            }
         }
 
 
@@ -108,17 +92,17 @@ namespace ToDoList
 
                 if (!string.IsNullOrEmpty(task))
                 {
-                    // Kikapcsoljuk a SelectedIndexChanged eseménykezelõt, hogy ne zavarjon bele
+                    // Kikapcsoljuk a SelectedIndexChanged eseménykezelõt a frissítés alatt
                     taskListBox.SelectedIndexChanged -= taskListBox_SelectedIndexChanged;
 
                     int selectedIndex = taskListBox.SelectedIndex;
                     taskListBox.Items[selectedIndex] = $"{task} - Prioritás: {priority} - Dátum: {date} - {completed}";
 
-                    // Visszakapcsoljuk a SelectedIndexChanged eseménykezelõt
+                    // Visszakapcsoljuk az eseménykezelõt
                     taskListBox.SelectedIndexChanged += taskListBox_SelectedIndexChanged;
 
-                    taskListBox.Invalidate();  // Frissítés a kijelölt soron
-                    ClearFields();  // Mezõk ürítése
+                    taskListBox.Invalidate();  // Frissítés
+                    ClearFields();
                 }
                 else
                 {
@@ -136,6 +120,7 @@ namespace ToDoList
             dateTimePicker.Value = DateTime.Now;
             doneCheckBox.Checked = false;
         }
+
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
@@ -188,6 +173,38 @@ namespace ToDoList
             }
         }
 
+        private void taskListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (taskListBox.SelectedItem != null)
+            {
+                string selectedTask = taskListBox.SelectedItem.ToString();
+                string[] parts = selectedTask.Split(new string[] { " - " }, StringSplitOptions.None);
+
+                if (parts.Length >= 3)
+                {
+                    // A feladat, prioritás, dátum és kész állapot beállítása a mezõkbe
+                    taskNameTextBox.Text = parts[0].Trim();
+                    priorityComboBox.SelectedItem = parts[1].Split(':')[1].Trim();
+
+                    // Dátum kinyerése és konvertálása
+                    string datePart = parts[2].Split(':')[1].Trim();
+                    if (DateTime.TryParse(datePart, out DateTime dateValue))
+                    {
+                        dateTimePicker.Value = dateValue;
+                    }
+                    else
+                    {
+                        // Ha a dátum nem érvényes, itt kezelheted az esetet, pl. beállíthatsz egy alapértelmezett dátumot
+                        MessageBox.Show("Érvénytelen dátum formátum.", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        dateTimePicker.Value = DateTime.Now; // vagy egy másik alapértelmezett dátum
+                    }
+
+                    doneCheckBox.Checked = selectedTask.Contains("Kész");
+                }
+            }
+        }
+
+
         private void sortComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (sortComboBox.SelectedItem != null)
@@ -199,21 +216,22 @@ namespace ToDoList
 
         private void SortTaskList(string sortBy)
         {
-            var tasks = taskListBox.Items.Cast<string>().ToList(); 
+            var tasks = taskListBox.Items.Cast<string>().ToList();
 
             if (sortBy == "Név szerint")
             {
-                tasks = tasks.OrderBy(task => task.Split('-')[0].Trim()).ToList();
+                tasks = tasks.OrderBy(task => GetTaskName(task)).ToList();
             }
             else if (sortBy == "Prioritás szerint")
             {
-                tasks = tasks.OrderBy(task => task.Split('-')[1].Trim().Split(':')[1].Trim()).ToList();
+                tasks = tasks.OrderBy(task => GetPriorityValue(task)).ToList();
             }
             else if (sortBy == "Dátum szerint")
             {
-                tasks = tasks.OrderBy(task => DateTime.Parse(task.Split('-')[2].Trim().Split(':')[1].Trim())).ToList();
+                tasks = tasks.OrderBy(task => GetTaskDate(task)).ToList();
             }
 
+            // Töröljük az összes elemet, majd újra hozzáadjuk a rendezett listát
             taskListBox.Items.Clear();
             foreach (var task in tasks)
             {
@@ -221,20 +239,78 @@ namespace ToDoList
             }
         }
 
+        private int GetPriorityValue(string task)
+        {
+            var taskParts = task.Split('-');
+
+            if (taskParts.Length >= 2)
+            {
+                var priorityPart = taskParts[1].Trim().Split(':');
+                if (priorityPart.Length == 2)
+                {
+                    // Konvertáljuk a prioritást az enum értékre, majd vissza int-re
+                    if (Enum.TryParse(priorityPart[1].Trim(), true, out Priority priority))
+                    {
+                        return (int)priority; // Magas: 0, Közepes: 1, Alacsony: 2
+                    }
+                }
+            }
+
+            // Ha nem sikerült kinyerni a prioritást, visszaadunk egy magasabb alapértelmezett értéket (itt a közepes)
+            return (int)Priority.Közepes;
+        }
+        public enum Priority
+        {
+            Magas,
+            Közepes,
+            Alacsony
+        }
+
+
+
+        private DateTime GetTaskDate(string task)
+        {
+            var taskParts = task.Split('-');
+
+            if (taskParts.Length >= 3)
+            {
+                var datePart = taskParts[2].Trim().Split(':');
+                if (datePart.Length == 2)
+                {
+                    DateTime date;
+                    if (DateTime.TryParse(datePart[1].Trim(), out date))
+                    {
+                        return date;
+                    }
+                }
+            }
+
+            // Ha nem sikerült kinyerni a dátumot, visszaadunk egy alapértelmezett értéket
+            return DateTime.MinValue;
+        }
+
+        private string GetTaskName(string task)
+        {
+            var taskParts = task.Split('-');
+
+            if (taskParts.Length >= 1)
+            {
+                return taskParts[0].Trim();
+            }
+
+            // Ha nem sikerült kinyerni a nevet, visszaadunk egy üres stringet
+            return string.Empty;
+        }
+
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        { }
 
         private void doneCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        { }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        { }
     }
 }

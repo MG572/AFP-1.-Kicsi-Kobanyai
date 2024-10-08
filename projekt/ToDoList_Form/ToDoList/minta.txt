@@ -1,5 +1,14 @@
-Bevásárlás - Prioritás: Közepes - Dátum: 2024.10.09 - 
-Futás a parkban - Prioritás: Alacsony - Dátum: 2024.10.10 - Kész
-Prezentáció elkészítése - Prioritás: Magas - Dátum: 2024.10.11 - 
-Autószerelő hívása - Prioritás: Közepes - Dátum: 2024.10.12 - Kész
-Olvasás - Prioritás: Alacsony - Dátum: 2024.10.13 -
+Bevásárlás - Prioritás: Közepes - Dátum: 2024.10.09. - 
+Futás a parkban - Prioritás: Alacsony - Dátum: 2024.10.10. - Kész
+Prezentáció elkészítése - Prioritás: Magas - Dátum: 2024.10.11. - 
+Autószerelő hívása - Prioritás: Közepes - Dátum: 2024.10.12. - Kész
+Lakás takarítása - Prioritás: Magas - Dátum: 2024.10.14. - 
+Fogorvos látogatás - Prioritás: Közepes - Dátum: 2024.10.15. - Kész
+E-mailek ellenőrzése - Prioritás: Alacsony - Dátum: 2024.10.16. - 
+Jógaóra - Prioritás: Közepes - Dátum: 2024.10.17. - Kész
+Moziba menni - Prioritás: Alacsony - Dátum: 2024.10.18. - 
+Munkahelyi értekezlet - Prioritás: Magas - Dátum: 2024.10.19. - 
+Torta rendelése - Prioritás: Közepes - Dátum: 2024.10.20. - 
+Kutyasétáltatás - Prioritás: Alacsony - Dátum: 2024.10.21. - Kész
+Fodrász időpont foglalása - Prioritás: Magas - Dátum: 2024.10.22. - 
+Gitáróra - Prioritás: Közepes - Dátum: 2024.10.23. - Kész
