@@ -48,6 +48,7 @@
             editButton = new Button();
             buttonDelete = new Button();
             outputButton = new Button();
+            buttonDeleteAll = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -273,7 +274,7 @@
             outputButton.BackColor = Color.FromArgb(245, 201, 41);
             outputButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
             outputButton.ForeColor = Color.Black;
-            outputButton.Location = new Point(798, 378);
+            outputButton.Location = new Point(742, 373);
             outputButton.Name = "outputButton";
             outputButton.Size = new Size(118, 60);
             outputButton.TabIndex = 11;
@@ -281,11 +282,22 @@
             outputButton.UseVisualStyleBackColor = false;
             outputButton.Click += outputButton_Click;
             // 
+            // buttonDeleteAll
+            // 
+            buttonDeleteAll.Location = new Point(876, 373);
+            buttonDeleteAll.Name = "buttonDeleteAll";
+            buttonDeleteAll.Size = new Size(119, 60);
+            buttonDeleteAll.TabIndex = 12;
+            buttonDeleteAll.Text = "Minden törlése";
+            buttonDeleteAll.UseVisualStyleBackColor = true;
+            buttonDeleteAll.Click += buttonDeleteAll_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1088, 559);
+            Controls.Add(buttonDeleteAll);
             Controls.Add(outputButton);
             Controls.Add(buttonDelete);
             Controls.Add(editButton);
@@ -336,5 +348,6 @@
         private Button buttonDelete;
         private Button outputButton;
         private Button button1;
+        private Button buttonDeleteAll;
     }
 }
