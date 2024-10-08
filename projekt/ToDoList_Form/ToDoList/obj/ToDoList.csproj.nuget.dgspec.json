@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\szila\\OneDrive\\Dokumentumok\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj": {}
+    "D:\\Git\\Genoplant\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj": {}
   },
   "projects": {
-    "C:\\Users\\szila\\OneDrive\\Dokumentumok\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj": {
+    "D:\\Git\\Genoplant\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\szila\\OneDrive\\Dokumentumok\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj",
+        "projectUniqueName": "D:\\Git\\Genoplant\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj",
         "projectName": "ToDoList",
-        "projectPath": "C:\\Users\\szila\\OneDrive\\Dokumentumok\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj",
-        "packagesPath": "C:\\Users\\szila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\szila\\OneDrive\\Dokumentumok\\GitHub\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\obj\\",
+        "projectPath": "D:\\Git\\Genoplant\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\ToDoList.csproj",
+        "packagesPath": "C:\\Users\\MG\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\Genoplant\\AFP-1.-Kicsi-Kobanyai\\projekt\\ToDoList_Form\\ToDoList\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\szila\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MG\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
