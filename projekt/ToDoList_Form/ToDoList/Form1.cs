@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ToDoList
@@ -8,13 +12,11 @@ namespace ToDoList
         {
             InitializeComponent();
             priorityComboBox.Items.AddRange(new string[] { "Alacsony", "Közepes", "Magas" });
-
             sortComboBox.Items.AddRange(new string[] { "Név szerint", "Prioritás szerint", "Dátum szerint" });
             sortComboBox.SelectedIndexChanged += sortComboBox_SelectedIndexChanged;
-
             taskListBox.DrawMode = DrawMode.OwnerDrawFixed;
             taskListBox.DrawItem += taskListBox_DrawItem;
-            taskListBox.SelectedIndexChanged += taskListBox_SelectedIndexChanged;  // Kijelölt sor esemény kezelése
+            taskListBox.SelectedIndexChanged += taskListBox_SelectedIndexChanged;
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -29,10 +31,12 @@ namespace ToDoList
             }
             else
             {
-                taskListBox.Items.Add($"{task} - Prioritás: {priority} - Dátum: {date} - {completed}");
+                string newTask = $"{task} - Prioritás: {priority} - Dátum: {date} - {completed}";
+                taskListBox.Items.Add(newTask);
                 ClearFields();
             }
         }
+
 
         private void taskListBox_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -92,16 +96,14 @@ namespace ToDoList
 
                 if (!string.IsNullOrEmpty(task))
                 {
-                    // Kikapcsoljuk a SelectedIndexChanged eseménykezelõt a frissítés alatt
                     taskListBox.SelectedIndexChanged -= taskListBox_SelectedIndexChanged;
 
                     int selectedIndex = taskListBox.SelectedIndex;
                     taskListBox.Items[selectedIndex] = $"{task} - Prioritás: {priority} - Dátum: {date} - {completed}";
 
-                    // Visszakapcsoljuk az eseménykezelõt
                     taskListBox.SelectedIndexChanged += taskListBox_SelectedIndexChanged;
 
-                    taskListBox.Invalidate();  // Frissítés
+                    taskListBox.Invalidate();
                     ClearFields();
                 }
                 else
@@ -182,23 +184,9 @@ namespace ToDoList
 
                 if (parts.Length >= 3)
                 {
-                    // A feladat, prioritás, dátum és kész állapot beállítása a mezõkbe
                     taskNameTextBox.Text = parts[0].Trim();
                     priorityComboBox.SelectedItem = parts[1].Split(':')[1].Trim();
-
-                    // Dátum kinyerése és konvertálása
-                    string datePart = parts[2].Split(':')[1].Trim();
-                    if (DateTime.TryParse(datePart, out DateTime dateValue))
-                    {
-                        dateTimePicker.Value = dateValue;
-                    }
-                    else
-                    {
-                        // Ha a dátum nem érvényes, itt kezelheted az esetet, pl. beállíthatsz egy alapértelmezett dátumot
-                        MessageBox.Show("Érvénytelen dátum formátum.", "Hiba", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        dateTimePicker.Value = DateTime.Now; // vagy egy másik alapértelmezett dátum
-                    }
-
+                    dateTimePicker.Value = DateTime.Parse(parts[2].Split(':')[1].Trim());
                     doneCheckBox.Checked = selectedTask.Contains("Kész");
                 }
             }
@@ -230,8 +218,6 @@ namespace ToDoList
             {
                 tasks = tasks.OrderBy(task => GetTaskDate(task)).ToList();
             }
-
-            // Töröljük az összes elemet, majd újra hozzáadjuk a rendezett listát
             taskListBox.Items.Clear();
             foreach (var task in tasks)
             {
@@ -248,15 +234,12 @@ namespace ToDoList
                 var priorityPart = taskParts[1].Trim().Split(':');
                 if (priorityPart.Length == 2)
                 {
-                    // Konvertáljuk a prioritást az enum értékre, majd vissza int-re
                     if (Enum.TryParse(priorityPart[1].Trim(), true, out Priority priority))
                     {
                         return (int)priority; // Magas: 0, Közepes: 1, Alacsony: 2
                     }
                 }
             }
-
-            // Ha nem sikerült kinyerni a prioritást, visszaadunk egy magasabb alapértelmezett értéket (itt a közepes)
             return (int)Priority.Közepes;
         }
         public enum Priority
@@ -284,8 +267,6 @@ namespace ToDoList
                     }
                 }
             }
-
-            // Ha nem sikerült kinyerni a dátumot, visszaadunk egy alapértelmezett értéket
             return DateTime.MinValue;
         }
 
@@ -297,8 +278,6 @@ namespace ToDoList
             {
                 return taskParts[0].Trim();
             }
-
-            // Ha nem sikerült kinyerni a nevet, visszaadunk egy üres stringet
             return string.Empty;
         }
 
