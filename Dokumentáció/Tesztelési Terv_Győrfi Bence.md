@@ -1,6 +1,6 @@
-#### Tesztelő: [A neved]
+#### Tesztelő: Győrfi Bence
 
-**Dátum**: 2024. október. 9.
+**Dátum**: 2024. október. 8.
 
 # A tesztelés a tesztelési útmutató alapján történt.
 
