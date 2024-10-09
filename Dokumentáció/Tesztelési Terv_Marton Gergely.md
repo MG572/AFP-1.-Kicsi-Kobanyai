@@ -1,4 +1,4 @@
-# ToDo List jegyzőkönyv
+# ToDo List Teszt jegyzőkönyv
 Tesztelést végezte: Márton Gergely
 
 Operációs rendszer: Windows 11
