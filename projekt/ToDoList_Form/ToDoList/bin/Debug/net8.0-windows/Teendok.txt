@@ -1,2 +1,1 @@
-teszt3 - Prioritás: Magas - Dátum: 10/8/2024 - Kész
-teszt4 - Prioritás: Alacsony - Dátum: 10/11/2024 - 
+teszt - Prioritás: Alacsony - Dátum: 10/9/2024 - 
