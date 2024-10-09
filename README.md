@@ -3,7 +3,7 @@
 Senior: 
 - [Sinka Barnabás](https://github.com/Horesz)
 
-- Csapattagok
+Csapatagok: 
 - [Marton Gergely](https://github.com/MG572)
 - [Sálek Dániel](https://github.com/SD4n1)
 - [Szilágyi Kristóf](https://github.com/Istok03)
